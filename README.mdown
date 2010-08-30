@@ -1,13 +1,13 @@
 myLauncher
 ==========
 
-myLauncher is a open source Objective-C library that allows you to add a iPhone like launcher into your iPhone app.
+myLauncher is a lightweight open source Objective-C library that allows you to add a iPhone like launcher into your iPhone app.
 
 [![](http://farm5.static.flickr.com/4118/4940057825_93a9c78eb8_m.jpg)](http://farm5.static.flickr.com/4118/4940057825_93a9c78eb8_z.jpg)
 [![](http://farm5.static.flickr.com/4138/4940644638_9796997395_m.jpg)](http://farm5.static.flickr.com/4138/4940644638_9796997395_z.jpg)
 [![](http://farm5.static.flickr.com/4095/4940057993_a2c89167bd_m.jpg)](http://farm5.static.flickr.com/4095/4940057993_a2c89167bd_z.jpg)
 
-[myLauncher Video][]
+[myLauncher Demo Video][]
 
 Community
 =========
@@ -19,15 +19,78 @@ If you would like to ask questions about myLauncher, post your question to myLau
 Adding myLauncher to your iPhone App
 ====================================
 
-Todo ... 
+These steps assume you understand the basics of iOS application development.
+Follow the following steps in order to add myLauncher into your project:
 
-@rigoneri
-=========
+1. Clone the myLauncher repository: 'git clone git://github.com/rigoneri/mylauncher.git'
+
+2. Locate the MyLauncher folder under '../myLauncher/myLauncher/Classes/' 
+	* Copy the MyLauncher folder into your project folder.
+ 	* Import all the files within that folder into your Xcode project.
+
+3. Locate the RootViewController files under '../myLauncher/myLauncher/'
+	* Copy RootViewController.h and RootViewController.m into your project folder
+	* Import both files into your Xcode project.
+
+4. In your application delegate header file make the following changes (AppDelegate.h):
+	* Import the RootViewController header file:
+		
+		#import "RootViewController.h"
+		
+	* Add appControllers instance variable:
+	
+		NSMutableDictionary *appControllers;
+		
+	* Add the property declaration for appControllers:
+	
+		@property (nonatomic, retain) NSMutableDictionary *appControllers;
+		
+5. In your application delegate implementation file make the following changes (AppDelegate.m):
+	* Import your view controllers before the @implementation block, for example:
+	
+		#import "ItemViewController.h"
+		
+	* Inside the implementation block synthesize appControllers:
+	
+		@synthesize appControllers;
+		
+	* Inside applicationDidFinishLaunching add your ItemViewController into appControllers:
+	
+		appControllers = [[NSMutableDictionary alloc] init];
+		[appControllers setObject:[ItemViewController class] forKey:@"ItemViewController"];
+		
+	* Also inside applicationDidFinishLaunching modify your UINavigationController to initialize with RootViewController:
+		
+		navigationController = [[UINavigationController alloc] initWithRootViewController:[[[RootViewController alloc] init] autorelease]];
+		
+	* Inside dealloc release appControllers
+	
+		[appControllers release];
+		
+6. In your prefix file make the following changes (AppName_Prefix.pch):
+	* Inside the ifdef import the app delegate, for example:
+	
+		#import "AppDelegate.h"
+	
+	* Outside the ifdef define the shortcut for color:
+	
+		#define COLOR(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+	
+7. IMPORTANT: You will need to make the necessary changes inside the application delegate and RootViewController in order to have the correct icons and in order to load the correct view controllers. 
+
+Apps using myLauncher
+=====================
+
+I'm currently working on one app that will be using myLauncher. Let me know if you use myLauncher in your app so I can add it to this list.
+
+Follow @rigoneri
+================
 
 Follow me on twitter @[rigoneri][]
+
 Checkout my apps at [rigoneri.com][]
 
-[myLauncher Video]: http://www.youtube.com/watch?v=D6SVYLfAO-Q
+[myLauncher Demo Video]: http://www.youtube.com/watch?v=D6SVYLfAO-Q
 [Google Group]: http://groups.google.com/group/mylauncher
 [rigoneri]: http://www.twitter.com/rigoneri
 [rigoneri.com]: http://www.rigoneri.com
