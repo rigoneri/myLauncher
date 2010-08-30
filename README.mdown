@@ -14,18 +14,18 @@ Community
 
 If you would like to ask questions about myLauncher, post your question to myLauncher's google group: 
 
-* [Google Group][] - http://groups.google.com/group/mylauncher
+[Google Group][] - http://groups.google.com/group/mylauncher
 
 Adding myLauncher to your iPhone App
 ====================================
 
-Todo…
+Todo ... 
 
 @rigoneri
 =========
 
-Follow me on twitter [@rigoneri][]
-Checkout my apps [rigoneri.com][]
+Follow me on twitter @[rigoneri][]
+Checkout my apps at [rigoneri.com][]
 
 [myLauncher Video]: http://www.youtube.com/watch?v=D6SVYLfAO-Q
 [Google Group]: http://groups.google.com/group/mylauncher
