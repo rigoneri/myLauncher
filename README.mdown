@@ -1,0 +1,34 @@
+myLauncher
+==========
+
+myLauncher is a open source Objective-C library that allows you to add a iPhone like launcher into your iPhone app.
+
+[![](http://farm5.static.flickr.com/4118/4940057825_93a9c78eb8_z.jpg)](http://farm5.static.flickr.com/4118/4940057825_93a9c78eb8_m.jpg)
+[![](http://farm5.static.flickr.com/4138/4940644638_9796997395_z.jpg)](http://farm5.static.flickr.com/4138/4940644638_9796997395_m.jpg)
+[![](http://farm5.static.flickr.com/4095/4940057993_a2c89167bd_z.jpg)](http://farm5.static.flickr.com/4095/4940057993_a2c89167bd_m.jpg)
+
+[myLauncher Video][]
+
+Community
+=========
+
+If you would like to ask questions about myLauncher, post your question to myLauncher's google group: 
+
+* [Google Group][] - http://groups.google.com/group/mylauncher
+
+Adding myLauncher to your iPhone App
+====================================
+
+Todo…
+
+@rigoneri
+=========
+
+Follow me on twitter [@rigoneri][]
+Checkout my apps [rigoneri.com][]
+
+[myLauncher Video]: http://www.youtube.com/watch?v=D6SVYLfAO-Q
+[Google Group]: http://groups.google.com/group/mylauncher
+[rigoneri]: http://www.twitter.com/rigoneri
+[rigoneri.com]: http://www.rigoneri.com
+
