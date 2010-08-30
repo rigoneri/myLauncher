@@ -1,0 +1,523 @@
+TMyLauncher
+v7
+r0
+t303359259.816724
+cCheck dependencies
+cProcessInfoPlistFile /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/Info.plist MyLauncher-Info.plist
+cCpResource build/Debug-iphonesimulator/MyLauncher.app/itemImage.png imgs/itemImage.png
+cCpResource build/Debug-iphonesimulator/MyLauncher.app/itemImage@2x.png imgs/itemImage@2x.png
+cCpResource build/Debug-iphonesimulator/MyLauncher.app/twitterImage@2x.png imgs/twitterImage@2x.png
+cCpResource build/Debug-iphonesimulator/MyLauncher.app/twitterImage.png imgs/twitterImage.png
+cCpResource build/Debug-iphonesimulator/MyLauncher.app/launcher.png imgs/launcher.png
+cCpResource build/Debug-iphonesimulator/MyLauncher.app/close.png imgs/close.png
+cProcessPCH /var/folders/Lt/Lt5FcXe0FlC4CvZ5g47atU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/MyLauncher_Prefix-gjbwctqndviktrhdqghxddiyubmk/MyLauncher_Prefix.pch.gch MyLauncher_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/main.o /Users/rigo/Desktop/myLauncher/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/AppDelegate.o /Users/rigo/Desktop/myLauncher/Classes/AppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NLauncherViewController.o /Users/rigo/Desktop/myLauncher/Classes/NLauncherViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NLauncherItem.o /Users/rigo/Desktop/myLauncher/Classes/NLauncherItem.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/ItemViewController.o /Users/rigo/Desktop/myLauncher/Classes/ItemViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/TwitterViewController.o /Users/rigo/Desktop/myLauncher/Classes/TwitterViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NLauncherView.o /Users/rigo/Desktop/myLauncher/Classes/NLauncherView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NPageControl.o /Users/rigo/Desktop/myLauncher/Classes/NPageControl.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NScrollView.o /Users/rigo/Desktop/myLauncher/Classes/NScrollView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/MyLauncher normal i386
+cGenerateDSYMFile /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app.dSYM /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/MyLauncher
+cTouch /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk
+c000000004C2C29C10000000000000132
+t1277962689
+s306
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BFDFE39000000000027C7D0
+t1274936889
+s2607056
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BFDFE7C000000000029D5D0
+t1274936956
+s2741712
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004BFDFE6E0000000000001466
+t1274936942
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C0470BB00000000000009CD
+t1275359419
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C0471620000000001D47210
+t1275359586
+s30700048
+
+N/Users/rigo/Desktop/myLauncher/Classes/AppDelegate.h
+c000000004C58D3B600000000000001EC
+t1280889782
+s492
+i<UIKit/UIKit.h>
+i"NLauncherViewController.h"
+
+N/Users/rigo/Desktop/myLauncher/Classes/AppDelegate.m
+c000000004C63723B00000000000003AB
+t1281585723
+s939
+i"AppDelegate.h"
+
+N/Users/rigo/Desktop/myLauncher/Classes/ItemViewController.h
+c000000004C579AFC00000000000000F7
+t1280809724
+s247
+i<UIKit/UIKit.h>
+
+N/Users/rigo/Desktop/myLauncher/Classes/ItemViewController.m
+c000000004C63723B000000000000044D
+t1281585723
+s1101
+i"ItemViewController.h"
+
+N/Users/rigo/Desktop/myLauncher/Classes/NLauncherItem.h
+c000000004C64A786000000000000036A
+t1281664902
+s874
+i<UIKit/UIKit.h>
+
+N/Users/rigo/Desktop/myLauncher/Classes/NLauncherItem.m
+c000000004C64A78E0000000000000E5C
+t1281664910
+s3676
+i"NLauncherItem.h"
+
+N/Users/rigo/Desktop/myLauncher/Classes/NLauncherView.h
+c000000004C64A23D0000000000000464
+t1281663549
+s1124
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+i"NLauncherItem.h"
+i"NPageControl.h"
+i"NScrollView.h"
+
+N/Users/rigo/Desktop/myLauncher/Classes/NLauncherView.m
+c000000004C64A81F0000000000003567
+t1281665055
+s13671
+i"NLauncherView.h"
+
+N/Users/rigo/Desktop/myLauncher/Classes/NLauncherViewController.h
+c000000004C5A2FC60000000000000234
+t1280978886
+s564
+i<UIKit/UIKit.h>
+i"NLauncherView.h"
+i"NLauncherItem.h"
+
+N/Users/rigo/Desktop/myLauncher/Classes/NLauncherViewController.m
+c000000004C64AA4E0000000000001BA8
+t1281665614
+s7080
+i"NLauncherViewController.h"
+i"ItemViewController.h"
+i"TwitterViewController.h"
+
+N/Users/rigo/Desktop/myLauncher/Classes/NPageControl.h
+c000000004C5923C50000000000000258
+t1280910277
+s600
+i<UIKit/UIKit.h>
+
+N/Users/rigo/Desktop/myLauncher/Classes/NPageControl.m
+c000000004C64AB040000000000000932
+t1281665796
+s2354
+i"NPageControl.h"
+
+N/Users/rigo/Desktop/myLauncher/Classes/NScrollView.h
+c000000004C5DC27E00000000000000ED
+t1281213054
+s237
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/rigo/Desktop/myLauncher/Classes/NScrollView.m
+c000000004C5DC30D0000000000000343
+t1281213197
+s835
+i"NScrollView.h"
+
+N/Users/rigo/Desktop/myLauncher/Classes/TwitterViewController.h
+c000000004C576CFD00000000000000EA
+t1280797949
+s234
+i<UIKit/UIKit.h>
+
+N/Users/rigo/Desktop/myLauncher/Classes/TwitterViewController.m
+c000000004C63723B0000000000000228
+t1281585723
+s552
+i"TwitterViewController.h"
+
+N/Users/rigo/Desktop/myLauncher/MyLauncher_Prefix.pch
+c000000004C63727B00000000000001C8
+t1281585787
+s456
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app
+t1281666459
+s374
+
+N/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app.dSYM
+t1281666459
+s102
+
+N/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/Info.plist
+t1281666457
+s781
+
+N/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/MyLauncher
+t1281666459
+s83144
+
+N/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/PkgInfo
+t1281666457
+s8
+
+N/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/close.png
+t1281666457
+s4472
+
+N/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/itemImage.png
+t1281666457
+s6871
+
+N/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/itemImage@2x.png
+t1281666457
+s12722
+
+N/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/launcher.png
+t1281666457
+s2950
+
+N/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/twitterImage.png
+t1281666457
+s5839
+
+N/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/twitterImage@2x.png
+t1281666457
+s9897
+
+N/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/AppDelegate.o
+t1281666458
+s50636
+
+N/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/ItemViewController.o
+t1281666459
+s39908
+
+N/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/MyLauncher.LinkFileList
+c000000004C64AD990000000000000492
+t1281666457
+s1170
+
+N/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NLauncherItem.o
+t1281666459
+s58652
+
+N/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NLauncherView.o
+t1281666459
+s89292
+
+N/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NLauncherViewController.o
+t1281666459
+s70020
+
+N/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NPageControl.o
+t1281666459
+s48988
+
+N/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NScrollView.o
+t1281666459
+s35128
+
+N/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/TwitterViewController.o
+t1281666459
+s36472
+
+N/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/main.o
+t1281666458
+s6464
+
+N/Users/rigo/Desktop/myLauncher/imgs/close.png
+c000000004C63758F0000000000001178
+t1281586575
+s4472
+
+N/Users/rigo/Desktop/myLauncher/imgs/itemImage.png
+c000000004C564AB10000000000001AD7
+t1280723633
+s6871
+
+N/Users/rigo/Desktop/myLauncher/imgs/itemImage@2x.png
+c000000004C576C8700000000000031B2
+t1280797831
+s12722
+
+N/Users/rigo/Desktop/myLauncher/imgs/launcher.png
+c000000004C57700C0000000000000B86
+t1280798732
+s2950
+
+N/Users/rigo/Desktop/myLauncher/imgs/twitterImage.png
+c000000004C576CBC00000000000016CF
+t1280797884
+s5839
+
+N/Users/rigo/Desktop/myLauncher/imgs/twitterImage@2x.png
+c000000004C576CA300000000000026A9
+t1280797859
+s9897
+
+N/Users/rigo/Desktop/myLauncher/main.m
+c000000004C55D96E0000000000000169
+t1280694638
+s361
+i<UIKit/UIKit.h>
+
+N/var/folders/Lt/Lt5FcXe0FlC4CvZ5g47atU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/MyLauncher_Prefix-gjbwctqndviktrhdqghxddiyubmk/MyLauncher_Prefix.pch.gch
+t1281666458
+s15236112
+
+NMyLauncher-Info.plist
+c000000004C55DB930000000000000459
+t1280695187
+s1113
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies303359257#303359257#0(0"0(0#1#0"3343187568374212096#0"0#
+
+CCompileC build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/AppDelegate.o /Users/rigo/Desktop/myLauncher/Classes/AppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s303359258.804160
+e303359258.937260
+r1
+xCompileC
+xbuild/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/AppDelegate.o
+x/Users/rigo/Desktop/myLauncher/Classes/AppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@60"Compile /Users/rigo/Desktop/myLauncher/Classes/AppDelegate.m303359258#303359258#0(0"0(0#0#52"/Users/rigo/Desktop/myLauncher/Classes/AppDelegate.m8603487968#1895"    cd /Users/rigo/Desktop/myLauncher    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-generated-files.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-own-target-headers.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-all-target-headers.hmap -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-project-headers.hmap -F/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator -I/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/include -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources/i386 -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources -include /var/folders/Lt/Lt5FcXe0FlC4CvZ5g47atU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/MyLauncher_Prefix-gjbwctqndviktrhdqghxddiyubmk/MyLauncher_Prefix.pch -c /Users/rigo/Desktop/myLauncher/Classes/AppDelegate.m -o /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/AppDelegate.o0#
+
+CCompileC build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/ItemViewController.o /Users/rigo/Desktop/myLauncher/Classes/ItemViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s303359259.063396
+e303359259.178081
+r1
+xCompileC
+xbuild/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/ItemViewController.o
+x/Users/rigo/Desktop/myLauncher/Classes/ItemViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@67"Compile /Users/rigo/Desktop/myLauncher/Classes/ItemViewController.m303359259#303359259#0(0"0(0#0#59"/Users/rigo/Desktop/myLauncher/Classes/ItemViewController.m8602827840#1909"    cd /Users/rigo/Desktop/myLauncher    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-generated-files.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-own-target-headers.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-all-target-headers.hmap -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-project-headers.hmap -F/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator -I/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/include -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources/i386 -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources -include /var/folders/Lt/Lt5FcXe0FlC4CvZ5g47atU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/MyLauncher_Prefix-gjbwctqndviktrhdqghxddiyubmk/MyLauncher_Prefix.pch -c /Users/rigo/Desktop/myLauncher/Classes/ItemViewController.m -o /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/ItemViewController.o0#
+
+CCompileC build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NLauncherItem.o /Users/rigo/Desktop/myLauncher/Classes/NLauncherItem.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s303359258.937440
+e303359259.121409
+r1
+xCompileC
+xbuild/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NLauncherItem.o
+x/Users/rigo/Desktop/myLauncher/Classes/NLauncherItem.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@62"Compile /Users/rigo/Desktop/myLauncher/Classes/NLauncherItem.m303359258#303359259#0(0"0(0#0#54"/Users/rigo/Desktop/myLauncher/Classes/NLauncherItem.m8602626144#1899"    cd /Users/rigo/Desktop/myLauncher    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-generated-files.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-own-target-headers.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-all-target-headers.hmap -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-project-headers.hmap -F/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator -I/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/include -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources/i386 -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources -include /var/folders/Lt/Lt5FcXe0FlC4CvZ5g47atU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/MyLauncher_Prefix-gjbwctqndviktrhdqghxddiyubmk/MyLauncher_Prefix.pch -c /Users/rigo/Desktop/myLauncher/Classes/NLauncherItem.m -o /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NLauncherItem.o0#
+
+CCompileC build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NLauncherView.o /Users/rigo/Desktop/myLauncher/Classes/NLauncherView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s303359259.178213
+e303359259.534423
+r1
+xCompileC
+xbuild/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NLauncherView.o
+x/Users/rigo/Desktop/myLauncher/Classes/NLauncherView.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@62"Compile /Users/rigo/Desktop/myLauncher/Classes/NLauncherView.m303359259#303359259#0(0"0(0#0#54"/Users/rigo/Desktop/myLauncher/Classes/NLauncherView.m8604680160#1899"    cd /Users/rigo/Desktop/myLauncher    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-generated-files.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-own-target-headers.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-all-target-headers.hmap -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-project-headers.hmap -F/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator -I/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/include -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources/i386 -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources -include /var/folders/Lt/Lt5FcXe0FlC4CvZ5g47atU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/MyLauncher_Prefix-gjbwctqndviktrhdqghxddiyubmk/MyLauncher_Prefix.pch -c /Users/rigo/Desktop/myLauncher/Classes/NLauncherView.m -o /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NLauncherView.o0#
+
+CCompileC build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NLauncherViewController.o /Users/rigo/Desktop/myLauncher/Classes/NLauncherViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s303359258.891684
+e303359259.063265
+r1
+xCompileC
+xbuild/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NLauncherViewController.o
+x/Users/rigo/Desktop/myLauncher/Classes/NLauncherViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/rigo/Desktop/myLauncher/Classes/NLauncherViewController.m303359258#303359259#0(0"0(0#0#64"/Users/rigo/Desktop/myLauncher/Classes/NLauncherViewController.m8602827072#1919"    cd /Users/rigo/Desktop/myLauncher    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-generated-files.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-own-target-headers.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-all-target-headers.hmap -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-project-headers.hmap -F/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator -I/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/include -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources/i386 -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources -include /var/folders/Lt/Lt5FcXe0FlC4CvZ5g47atU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/MyLauncher_Prefix-gjbwctqndviktrhdqghxddiyubmk/MyLauncher_Prefix.pch -c /Users/rigo/Desktop/myLauncher/Classes/NLauncherViewController.m -o /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NLauncherViewController.o0#
+
+CCompileC build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NPageControl.o /Users/rigo/Desktop/myLauncher/Classes/NPageControl.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s303359259.217068
+e303359259.337384
+r1
+xCompileC
+xbuild/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NPageControl.o
+x/Users/rigo/Desktop/myLauncher/Classes/NPageControl.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@61"Compile /Users/rigo/Desktop/myLauncher/Classes/NPageControl.m303359259#303359259#0(0"0(0#0#53"/Users/rigo/Desktop/myLauncher/Classes/NPageControl.m8604441536#1897"    cd /Users/rigo/Desktop/myLauncher    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-generated-files.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-own-target-headers.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-all-target-headers.hmap -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-project-headers.hmap -F/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator -I/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/include -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources/i386 -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources -include /var/folders/Lt/Lt5FcXe0FlC4CvZ5g47atU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/MyLauncher_Prefix-gjbwctqndviktrhdqghxddiyubmk/MyLauncher_Prefix.pch -c /Users/rigo/Desktop/myLauncher/Classes/NPageControl.m -o /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NPageControl.o0#
+
+CCompileC build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NScrollView.o /Users/rigo/Desktop/myLauncher/Classes/NScrollView.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s303359259.337501
+e303359259.449024
+r1
+xCompileC
+xbuild/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NScrollView.o
+x/Users/rigo/Desktop/myLauncher/Classes/NScrollView.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@60"Compile /Users/rigo/Desktop/myLauncher/Classes/NScrollView.m303359259#303359259#0(0"0(0#0#52"/Users/rigo/Desktop/myLauncher/Classes/NScrollView.m8605458240#1895"    cd /Users/rigo/Desktop/myLauncher    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-generated-files.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-own-target-headers.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-all-target-headers.hmap -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-project-headers.hmap -F/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator -I/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/include -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources/i386 -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources -include /var/folders/Lt/Lt5FcXe0FlC4CvZ5g47atU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/MyLauncher_Prefix-gjbwctqndviktrhdqghxddiyubmk/MyLauncher_Prefix.pch -c /Users/rigo/Desktop/myLauncher/Classes/NScrollView.m -o /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/NScrollView.o0#
+
+CCompileC build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/TwitterViewController.o /Users/rigo/Desktop/myLauncher/Classes/TwitterViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s303359259.121528
+e303359259.216948
+r1
+xCompileC
+xbuild/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/TwitterViewController.o
+x/Users/rigo/Desktop/myLauncher/Classes/TwitterViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@70"Compile /Users/rigo/Desktop/myLauncher/Classes/TwitterViewController.m303359259#303359259#0(0"0(0#0#62"/Users/rigo/Desktop/myLauncher/Classes/TwitterViewController.m8604955264#1915"    cd /Users/rigo/Desktop/myLauncher    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-generated-files.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-own-target-headers.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-all-target-headers.hmap -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-project-headers.hmap -F/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator -I/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/include -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources/i386 -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources -include /var/folders/Lt/Lt5FcXe0FlC4CvZ5g47atU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/MyLauncher_Prefix-gjbwctqndviktrhdqghxddiyubmk/MyLauncher_Prefix.pch -c /Users/rigo/Desktop/myLauncher/Classes/TwitterViewController.m -o /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/TwitterViewController.o0#
+
+CCompileC build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/main.o /Users/rigo/Desktop/myLauncher/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s303359258.803028
+e303359258.891559
+r1
+xCompileC
+xbuild/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/main.o
+x/Users/rigo/Desktop/myLauncher/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@45"Compile /Users/rigo/Desktop/myLauncher/main.m303359258#303359258#0(0"0(0#0#37"/Users/rigo/Desktop/myLauncher/main.m8604416160#1873"    cd /Users/rigo/Desktop/myLauncher    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-generated-files.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-own-target-headers.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-all-target-headers.hmap -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-project-headers.hmap -F/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator -I/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/include -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources/i386 -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources -include /var/folders/Lt/Lt5FcXe0FlC4CvZ5g47atU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/MyLauncher_Prefix-gjbwctqndviktrhdqghxddiyubmk/MyLauncher_Prefix.pch -c /Users/rigo/Desktop/myLauncher/main.m -o /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/main.o0#
+
+CCpResource build/Debug-iphonesimulator/MyLauncher.app/close.png imgs/close.png
+s303359257.462822
+e303359257.493642
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/MyLauncher.app/close.png
+ximgs/close.png
+lSLF07#2@19"Copy imgs/close.png303359257#303359257#0(0"0(0#0#45"/Users/rigo/Desktop/myLauncher/imgs/close.png8602748544#437"    cd /Users/rigo/Desktop/myLauncher    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/rigo/Desktop/myLauncher/imgs/close.png /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app0#
+
+CCpResource build/Debug-iphonesimulator/MyLauncher.app/itemImage.png imgs/itemImage.png
+s303359257.459239
+e303359257.485752
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/MyLauncher.app/itemImage.png
+ximgs/itemImage.png
+lSLF07#2@23"Copy imgs/itemImage.png303359257#303359257#0(0"0(0#0#49"/Users/rigo/Desktop/myLauncher/imgs/itemImage.png8600989664#441"    cd /Users/rigo/Desktop/myLauncher    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/rigo/Desktop/myLauncher/imgs/itemImage.png /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app0#
+
+CCpResource build/Debug-iphonesimulator/MyLauncher.app/itemImage@2x.png imgs/itemImage@2x.png
+s303359257.460134
+e303359257.494217
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/MyLauncher.app/itemImage@2x.png
+ximgs/itemImage@2x.png
+lSLF07#2@26"Copy imgs/itemImage@2x.png303359257#303359257#0(0"0(0#0#52"/Users/rigo/Desktop/myLauncher/imgs/itemImage@2x.png8600206592#444"    cd /Users/rigo/Desktop/myLauncher    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/rigo/Desktop/myLauncher/imgs/itemImage@2x.png /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app0#
+
+CCpResource build/Debug-iphonesimulator/MyLauncher.app/launcher.png imgs/launcher.png
+s303359257.462185
+e303359257.489743
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/MyLauncher.app/launcher.png
+ximgs/launcher.png
+lSLF07#2@22"Copy imgs/launcher.png303359257#303359257#0(0"0(0#0#48"/Users/rigo/Desktop/myLauncher/imgs/launcher.png8603410144#440"    cd /Users/rigo/Desktop/myLauncher    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/rigo/Desktop/myLauncher/imgs/launcher.png /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app0#
+
+CCpResource build/Debug-iphonesimulator/MyLauncher.app/twitterImage.png imgs/twitterImage.png
+s303359257.461504
+e303359257.489528
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/MyLauncher.app/twitterImage.png
+ximgs/twitterImage.png
+lSLF07#2@26"Copy imgs/twitterImage.png303359257#303359257#0(0"0(0#0#52"/Users/rigo/Desktop/myLauncher/imgs/twitterImage.png8604383840#444"    cd /Users/rigo/Desktop/myLauncher    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/rigo/Desktop/myLauncher/imgs/twitterImage.png /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app0#
+
+CCpResource build/Debug-iphonesimulator/MyLauncher.app/twitterImage@2x.png imgs/twitterImage@2x.png
+s303359257.460818
+e303359257.493425
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/MyLauncher.app/twitterImage@2x.png
+ximgs/twitterImage@2x.png
+lSLF07#2@29"Copy imgs/twitterImage@2x.png303359257#303359257#0(0"0(0#0#55"/Users/rigo/Desktop/myLauncher/imgs/twitterImage@2x.png8604865920#447"    cd /Users/rigo/Desktop/myLauncher    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/rigo/Desktop/myLauncher/imgs/twitterImage@2x.png /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app0#
+
+CGenerateDSYMFile /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app.dSYM /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/MyLauncher
+s303359259.731272
+e303359259.811785
+r1
+xGenerateDSYMFile
+x/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app.dSYM
+x/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/MyLauncher
+lSLF07#2@118"GenerateDSYMFile build/Debug-iphonesimulator/MyLauncher.app.dSYM build/Debug-iphonesimulator/MyLauncher.app/MyLauncher303359259#303359259#0(0"0(0#0#84"/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/MyLauncher8600546272#368"    cd /Users/rigo/Desktop/myLauncher    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/MyLauncher -o /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app.dSYM0#
+
+CLd /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/MyLauncher normal i386
+s303359259.534561
+e303359259.731159
+r1
+xLd
+x/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/MyLauncher
+xnormal
+xi386
+lSLF07#2@89"Link /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/MyLauncher303359259#303359259#0(0"0(0#0#0"8602922784#875"    cd /Users/rigo/Desktop/myLauncher    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -L/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator -F/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator -filelist /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/Objects-normal/i386/MyLauncher.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/MyLauncher0#
+
+CProcessInfoPlistFile /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/Info.plist MyLauncher-Info.plist
+s303359257.431058
+e303359257.458939
+r1
+xProcessInfoPlistFile
+x/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/Info.plist
+xMyLauncher-Info.plist
+lSLF07#2@29"Process MyLauncher-Info.plist303359257#303359257#0(0"0(0#0#52"/Users/rigo/Desktop/myLauncher/MyLauncher-Info.plist27303536605069420#464"    cd /Users/rigo/Desktop/myLauncher    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility MyLauncher-Info.plist -genpkginfo /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app/Info.plist0#
+
+CProcessPCH /var/folders/Lt/Lt5FcXe0FlC4CvZ5g47atU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/MyLauncher_Prefix-gjbwctqndviktrhdqghxddiyubmk/MyLauncher_Prefix.pch.gch MyLauncher_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s303359257.494358
+e303359258.802904
+r1
+xProcessPCH
+x/var/folders/Lt/Lt5FcXe0FlC4CvZ5g47atU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/MyLauncher_Prefix-gjbwctqndviktrhdqghxddiyubmk/MyLauncher_Prefix.pch.gch
+xMyLauncher_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@32"Precompile MyLauncher_Prefix.pch303359257#303359258#0(0"0(0#0#52"/Users/rigo/Desktop/myLauncher/MyLauncher_Prefix.pch8601162944#1770"    cd /Users/rigo/Desktop/myLauncher    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-generated-files.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-own-target-headers.hmap -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-all-target-headers.hmap -iquote /Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/MyLauncher-project-headers.hmap -F/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator -I/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/include -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources/i386 -I/Users/rigo/Desktop/myLauncher/build/MyLauncher.build/Debug-iphonesimulator/MyLauncher.build/DerivedSources -c /Users/rigo/Desktop/myLauncher/MyLauncher_Prefix.pch -o /var/folders/Lt/Lt5FcXe0FlC4CvZ5g47atU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/MyLauncher_Prefix-gjbwctqndviktrhdqghxddiyubmk/MyLauncher_Prefix.pch.gch0#
+
+CTouch /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app
+s303359259.811911
+e303359259.816626
+r1
+xTouch
+x/Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app
+lSLF07#2@79"Touch /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app303359259#303359259#0(0"0(0#0#0"8600595488#265"    cd /Users/rigo/Desktop/myLauncher    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/rigo/Desktop/myLauncher/build/Debug-iphonesimulator/MyLauncher.app0#
+
