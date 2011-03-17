@@ -3,6 +3,7 @@
 //  @rigoneri
 //  
 //  Copyright 2010 Rodrigo Neri
+//  Copyright 2011 David Jarrett
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -28,32 +29,35 @@
 -(void)launcherViewDidEndEditing:(id)sender;
 @end
 
-@interface MyLauncherView : UIView <UIScrollViewDelegate, MyLauncherItemDelegate>
-{
-	id <MyLauncherViewDelegate> delegate;
-	MyLauncherScrollView *pagesScrollView;
-	MyLauncherPageControl *pageControl;
-	
-	NSMutableArray *pages;
-	NSTimer *itemHoldTimer;
-	NSTimer *movePagesTimer;
-	
+@interface MyLauncherView : UIView <UIScrollViewDelegate, MyLauncherItemDelegate> {	
+    UIDeviceOrientation currentOrientation;
 	BOOL itemsAdded;
 	BOOL editing;
 	BOOL dragging;
-	MyLauncherItem *draggingItem;
-	
+    BOOL editingAllowed;
+	NSInteger numberOfImmovableItems;
+    
 	int columnCount;
 	int rowCount;
 	CGFloat itemWidth;
 	CGFloat itemHeight;
+    CGFloat minX;
+    CGFloat minY;
+    CGFloat paddingX;
+    CGFloat paddingY;
 }
 
-@property (nonatomic, assign) id delegate;
-@property (nonatomic, assign) MyLauncherScrollView *pagesScrollView;
-@property (nonatomic, assign) MyLauncherPageControl *pageControl;
-@property (nonatomic, copy) NSMutableArray *pages;
+@property (nonatomic) BOOL editingAllowed;
+@property (nonatomic) NSInteger numberOfImmovableItems;
+@property (nonatomic, retain) id <MyLauncherViewDelegate> delegate;
+@property (nonatomic, retain) MyLauncherScrollView *pagesScrollView;
+@property (nonatomic, retain) MyLauncherPageControl *pageControl;
+@property (nonatomic, retain) NSMutableArray *pages;
 
+-(void)setPages:(NSMutableArray *)pages numberOfImmovableItems:(NSInteger)items;
+-(void)viewDidAppear:(BOOL)animated;
 -(void)layoutLauncher;
+-(int)maxItemsPerPage;
+-(int)maxPages;
 
 @end

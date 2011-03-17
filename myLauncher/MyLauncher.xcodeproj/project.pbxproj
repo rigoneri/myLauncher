@@ -25,6 +25,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		7DA45DCD1316B0C700D5FA85 /* itemImage-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DA45DCB1316B0C700D5FA85 /* itemImage-iPad.png */; };
+		7DF382D7133258A900738192 /* Icon-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF382D6133258A900738192 /* Icon-iPad.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* MyLauncher_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLauncher_Prefix.pch; sourceTree = "<group>"; };
+		7DA45DCB1316B0C700D5FA85 /* itemImage-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "itemImage-iPad.png"; path = "imgs/itemImage-iPad.png"; sourceTree = "<group>"; };
+		7DF382D6133258A900738192 /* Icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPad.png"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* MyLauncher-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MyLauncher-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +160,7 @@
 			children = (
 				0F93B7E61213AE4500BA0DB9 /* close.png */,
 				0F2C05871207A88D009D2ED9 /* launcher.png */,
+				7DA45DC81316AD6E00D5FA85 /* Images@iPad */,
 				0F2C053E12068241009D2ED9 /* Images@2x */,
 				0F1328E91206371D00C7C87C /* Images@1x */,
 				8D1107310486CEB800E47090 /* MyLauncher-Info.plist */,
@@ -171,6 +176,15 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DA45DC81316AD6E00D5FA85 /* Images@iPad */ = {
+			isa = PBXGroup;
+			children = (
+				7DF382D6133258A900738192 /* Icon-iPad.png */,
+				7DA45DCB1316B0C700D5FA85 /* itemImage-iPad.png */,
+			);
+			name = "Images@iPad";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,7 +214,11 @@
 			isa = PBXProject;
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "MyLauncher" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -221,6 +239,8 @@
 				0F93B7E71213AE4500BA0DB9 /* close.png in Resources */,
 				0F975CCE122B524500F678EB /* Icon.png in Resources */,
 				0F975CCF122B524500F678EB /* Icon@2x.png in Resources */,
+				7DA45DCD1316B0C700D5FA85 /* itemImage-iPad.png in Resources */,
+				7DF382D7133258A900738192 /* Icon-iPad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +276,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MyLauncher_Prefix.pch;
 				INFOPLIST_FILE = "MyLauncher-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = MyLauncher;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -268,7 +290,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = MyLauncher_Prefix.pch;
 				INFOPLIST_FILE = "MyLauncher-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				PRODUCT_NAME = MyLauncher;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -282,7 +306,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -296,7 +320,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

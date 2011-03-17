@@ -3,6 +3,7 @@
 //  @rigoneri
 //  
 //  Copyright 2010 Rodrigo Neri
+//  Copyright 2011 David Jarrett
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -18,11 +19,10 @@
 //
 
 #import "AppDelegate.h"
-#import "ItemViewController.h"
 
 @implementation AppDelegate
 
-@synthesize window, navigationController, appControllers;
+@synthesize window, navigationController;
 
 - (void)applicationDidFinishLaunching:(UIApplication*)application 
 {
@@ -33,13 +33,6 @@
         return;
     }
     window.backgroundColor = [UIColor blackColor];
-	
-	appControllers = [[NSMutableDictionary alloc] init];
-	[appControllers setObject:[ItemViewController class] forKey:@"ItemViewController"];
-	
-	//Add your view controllers here to be picked up by the launcher
-	//[appControllers setObject:[MyCustomViewController class] forKey:@"MyCustomViewController"];
-	//[appControllers setObject:[MyOtherCustomViewController class] forKey:@"MyOtherCustomViewController"];
 							
 	navigationController = [[UINavigationController alloc] initWithRootViewController:
 							[[[RootViewController alloc] init] autorelease]];
@@ -54,7 +47,6 @@
 {
     [navigationController release];
     [window release];
-	[appControllers release];
     [super dealloc];
 }
 

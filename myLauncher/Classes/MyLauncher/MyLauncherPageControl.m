@@ -3,6 +3,7 @@
 //  @rigoneri
 //  
 //  Copyright 2010 Rodrigo Neri
+//  Copyright 2011 David Jarrett
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -21,16 +22,19 @@
 
 @implementation MyLauncherPageControl
 
-@synthesize numberOfPages, hidesForSinglePage, inactivePageColor, activePageColor;
+@synthesize numberOfPages, maxNumberOfPages, hidesForSinglePage;
+@synthesize inactivePageColor = _inactivePageColor;
+@synthesize activePageColor = _activePageColor;
 @dynamic currentPage;
 
 - (id)initWithFrame:(CGRect)frame 
 {
-    if (self = [super initWithFrame:frame]) 
+    if ((self = [super initWithFrame:frame])) 
 	{
         hidesForSinglePage = NO;
-		activePageColor = [COLOR(2, 100, 162) retain];
-		inactivePageColor = [UIColor grayColor];
+        maxNumberOfPages = 20; // Max before clipping
+		[self setActivePageColor:COLOR(2, 100, 162)];
+		[self setInactivePageColor:[UIColor grayColor]];
     }
     return self;
 }
@@ -57,11 +61,11 @@
 			
 			if (i == [self currentPage])
 			{
-				CGContextSetFillColorWithColor(context, [activePageColor CGColor]);
+				CGContextSetFillColorWithColor(context, [self.activePageColor CGColor]);
 			} 
 			else 
 			{
-				CGContextSetFillColorWithColor(context, [inactivePageColor CGColor]);
+				CGContextSetFillColorWithColor(context, [self.inactivePageColor CGColor]);
 			}
 			CGContextFillEllipseInRect(context, contentRect);
 			contentRect.origin.x += dotSize + margin;
@@ -92,7 +96,7 @@
 
 -(void)setNumberOfPages:(NSInteger)count
 {
-	if (count > 6) return;
+	if (count > maxNumberOfPages) return;
 	self.hidden = count <= 1 ? YES : NO;
 	
 	numberOfPages = count;
@@ -112,6 +116,8 @@
 
 - (void)dealloc 
 {
+    self.activePageColor = nil;
+    self.inactivePageColor = nil;
     [super dealloc];
 }
 

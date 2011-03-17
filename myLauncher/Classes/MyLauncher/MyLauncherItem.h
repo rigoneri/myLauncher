@@ -3,6 +3,7 @@
 //  @rigoneri
 //  
 //  Copyright 2010 Rodrigo Neri
+//  Copyright 2011 David Jarrett
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -23,27 +24,21 @@
 -(void)didDeleteItem:(id)item;
 @end
 
-@interface MyLauncherItem : UIControl 
-{
-	id <MyLauncherItemDelegate> delegate;
-	Class targetController;
-	NSString *title;
-	NSString *image;
-	NSString *controllerStr;
-	
+@interface MyLauncherItem : UIControl {	
 	BOOL dragging;
 	BOOL deletable;
-	UIButton *closeButton;
 }
 
 @property (nonatomic, assign) id delegate;
-@property (nonatomic) Class targetController;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *image;
+@property (nonatomic, retain) NSString *iPadImage;
 @property (nonatomic, retain) NSString *controllerStr;
+@property (nonatomic, retain) NSString *controllerTitle;
 @property (nonatomic, retain) UIButton *closeButton;
 
--(id)initWithTitle:(NSString *)_title image:(NSString *)_image target:(NSString *)_targetControllerStr deletable:(BOOL)_deletable;
+-(id)initWithTitle:(NSString *)title image:(NSString *)image target:(NSString *)targetControllerStr deletable:(BOOL)_deletable;
+-(id)initWithTitle:(NSString *)title iPhoneImage:(NSString *)image iPadImage:(NSString *)iPadImage target:(NSString *)targetControllerStr targetTitle:(NSString *)targetTitle deletable:(BOOL)_deletable;
 -(void)layoutItem;
 -(void)setDragging:(BOOL)flag;
 -(BOOL)dragging;

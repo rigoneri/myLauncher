@@ -3,6 +3,7 @@
 //  @rigoneri
 //  
 //  Copyright 2010 Rodrigo Neri
+//  Copyright 2011 David Jarrett
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -19,42 +20,164 @@
 
 #import "MyLauncherViewController.h"
 
-@interface MyLauncherViewController(hidden)
+@interface MyLauncherViewController ()
 -(NSMutableArray *)savedLauncherItems;
 -(NSArray*)retrieveFromUserDefaults:(NSString *)key;
+-(void)saveToUserDefaults:(id)object key:(NSString *)key;
+@property (nonatomic, retain) UIView *overlayView;
 @end
 
 @implementation MyLauncherViewController
 
-@synthesize launcherNavigationController, launcherView, launcherItems;
+@synthesize launcherNavigationController = _launcherNavigationController;
+@synthesize launcherView = _launcherView;
+@synthesize appControllers = _appControllers;
+@synthesize overlayView = _overlayView;
 
--(id)init
-{
-	if((self = [super init]))
-	{ 
+#pragma mark - ViewController lifecycle
+
+-(id)init {
+	if((self = [super init])) { 
 		self.title = @"myLauncher";
 	}
 	return self;
 }
 
--(void)loadView
-{
+-(void)loadView {
 	[super loadView];
 	
-	launcherView = [[MyLauncherView alloc] initWithFrame:self.view.bounds];
-	[launcherView setBackgroundColor:COLOR(234,237,250)];
-	[launcherView setDelegate:self];
-	self.view = launcherView;
+	[self setLauncherView:[[[MyLauncherView alloc] initWithFrame:self.view.bounds] autorelease]];
+	[self.launcherView setBackgroundColor:COLOR(234,237,250)];
+	[self.launcherView setDelegate:self];
+	self.view = self.launcherView;
 	
-	launcherItems = [self savedLauncherItems];
-	
-	if(launcherItems)
-		[launcherView setPages:launcherItems];
+    [self.launcherView setPages:[self savedLauncherItems]];
+    [self.launcherView setNumberOfImmovableItems:[(NSNumber *)[self retrieveFromUserDefaults:@"myLauncherViewImmovable"] intValue]];
+    
+    [self setAppControllers:[[[NSMutableDictionary alloc] init] autorelease]];
 }
 
--(NSMutableArray *)savedLauncherItems
-{
-	NSArray *savedPages = [self retrieveFromUserDefaults:@"myLauncherView"];
+- (void)viewDidAppear:(BOOL)animated {
+    [self.launcherView viewDidAppear:animated];
+}
+
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {	
+	if(self.launcherNavigationController)
+		[self.launcherNavigationController setNavigationBarHidden:YES];
+	
+	return YES;
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+	if(self.launcherNavigationController)	
+		[self.launcherNavigationController setNavigationBarHidden:NO];
+	
+	self.overlayView.frame = self.launcherView.frame;
+	[self.launcherView layoutLauncher];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+- (void)viewDidUnload {
+    [super viewDidUnload];
+}
+
+- (void)dealloc {
+	self.launcherNavigationController = nil;
+    self.launcherView = nil;
+    self.overlayView = nil;
+    [super dealloc];
+}
+
+#pragma mark - MyLauncherItem management
+
+-(void)launcherViewItemSelected:(MyLauncherItem*)item {
+    if (![self appControllers]) {
+        return;
+    }
+    Class viewCtrClass = [[self appControllers] objectForKey:[item controllerStr]];
+	UIViewController *controller = [[[viewCtrClass alloc] init] autorelease];
+	
+	[self setLauncherNavigationController:[[[UINavigationController alloc] initWithRootViewController:controller] autorelease]];	
+	[[self.launcherNavigationController topViewController] setTitle:item.controllerTitle];
+	
+	if(self.view.frame.size.width == 480)
+		self.launcherNavigationController.view.frame = CGRectMake(0, 0, 480, 320);
+	
+	[controller.navigationItem setLeftBarButtonItem:
+	 [[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"launcher"]
+									  style:UIBarButtonItemStyleBordered 
+									 target:self 
+									 action:@selector(closeView)] autorelease]];
+				
+	UIView *viewToLaunch = [[self.launcherNavigationController topViewController] view];
+	
+	[self.parentViewController.view addSubview:[self.launcherNavigationController view]];
+	viewToLaunch.alpha = 0;		
+	viewToLaunch.transform = CGAffineTransformMakeScale(0.00001, 0.00001);
+	
+	if (!self.overlayView) 
+	{
+		[self setOverlayView:[[[UIView alloc] initWithFrame:self.launcherView.bounds] autorelease]];
+		self.overlayView.backgroundColor = [UIColor blackColor];
+		self.overlayView.alpha = 0;
+		self.overlayView.autoresizesSubviews = YES;
+		self.overlayView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
+		[self.view addSubview:self.overlayView];
+	}
+	
+	self.launcherView.frame = self.overlayView.bounds;
+	self.launcherView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+	
+	[UIView animateWithDuration:0.3 
+						  delay:0 
+						options:UIViewAnimationOptionCurveEaseIn 
+					 animations:^{
+						 viewToLaunch.alpha = 1.0;		
+						 viewToLaunch.transform = CGAffineTransformIdentity;
+						 self.overlayView.alpha = 0.7;
+					 }
+					 completion:nil];
+}
+
+-(void)launcherViewDidBeginEditing:(id)sender {
+	[self.navigationItem setRightBarButtonItem:[[[UIBarButtonItem alloc] 
+												 initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+												 target:self.launcherView action:@selector(endEditing)] autorelease] animated:YES];
+}
+
+-(void)launcherViewDidEndEditing:(id)sender {
+	[self.navigationItem setRightBarButtonItem:nil];
+}
+
+- (void)closeView {	
+	UIView *viewToClose = [[self.launcherNavigationController topViewController] view];
+	viewToClose.transform = CGAffineTransformIdentity;
+	
+	[UIView animateWithDuration:0.3 
+						  delay:0 
+						options:UIViewAnimationOptionCurveEaseOut 
+					 animations:^{
+						 viewToClose.alpha = 0;		
+						 viewToClose.transform = CGAffineTransformMakeScale(0.00001, 0.00001);
+						 self.overlayView.alpha = 0;
+					 }
+					 completion:^(BOOL finished){
+						 [[self.launcherNavigationController topViewController] viewWillDisappear:NO];
+						 [[self.launcherNavigationController view] removeFromSuperview];
+						 [[self.launcherNavigationController topViewController] viewDidDisappear:NO];
+						 [self.parentViewController viewWillAppear:NO];
+						 [self.parentViewController viewDidAppear:NO];
+					 }];
+}
+
+#pragma mark - myLauncher caching
+
+-(NSMutableArray *)savedLauncherItems {
+	NSArray *savedPages = (NSArray *)[self retrieveFromUserDefaults:@"myLauncherView"];
 	
 	if(savedPages)
 	{
@@ -65,150 +188,58 @@
 			NSMutableArray *savedPage = [[NSMutableArray alloc] init];
 			for(NSDictionary *item in page)
 			{
-				[savedPage addObject:[[[MyLauncherItem alloc] 
-									   initWithTitle:[item objectForKey:@"title"]
-									   image:[item objectForKey:@"image"]
-									   target:[item objectForKey:@"controller"] 
-									   deletable:[[item objectForKey:@"deletable"] boolValue]] autorelease]];	
+                NSNumber *version;
+                if ((version = [item objectForKey:@"myLauncherViewItemVersion"])) {
+                    if ([version intValue] == 2) {
+                        [savedPage addObject:[[[MyLauncherItem alloc] 
+                                               initWithTitle:[item objectForKey:@"title"]
+                                               iPhoneImage:[item objectForKey:@"image"]
+                                               iPadImage:[item objectForKey:@"iPadImage"]
+                                               target:[item objectForKey:@"controller"] 
+                                               targetTitle:[item objectForKey:@"controllerTitle"]
+                                               deletable:[[item objectForKey:@"deletable"] boolValue]] autorelease]];
+                    }
+                } else {
+                    [savedPage addObject:[[[MyLauncherItem alloc]
+                                           initWithTitle:[item objectForKey:@"title"]
+                                           image:[item objectForKey:@"image"]
+                                           target:[item objectForKey:@"controller"]
+                                           deletable:[[item objectForKey:@"deletable"] boolValue]] autorelease]];
+                }
 			}
 			
 			[savedLauncherItems addObject:savedPage];
 			[savedPage release];
 		}
 		
+        savedItems = YES;
 		return [savedLauncherItems autorelease];
 	}
-
+    
 	return nil;
 }
 
--(void)launcherViewItemSelected:(MyLauncherItem*)item
-{
-	UIViewController *controller = [[[item.targetController alloc] init] autorelease];
-
-	if(launcherNavigationController)
-		[launcherNavigationController release];
-	
-	launcherNavigationController = [[UINavigationController alloc] initWithRootViewController:controller];	
-	[[launcherNavigationController topViewController] setTitle:item.title];
-	
-	if(self.view.frame.size.width == 480)
-		launcherNavigationController.view.frame = CGRectMake(0, 0, 480, 320);
-	
-	[controller.navigationItem setLeftBarButtonItem:
-	 [[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"launcher"]
-									  style:UIBarButtonItemStyleBordered 
-									 target:self 
-									 action:@selector(closeView)] autorelease]];
-				
-	UIView *viewToLaunch = [[launcherNavigationController topViewController] view];
-	
-	[self.parentViewController.view addSubview:[launcherNavigationController view]];
-	viewToLaunch.alpha = 0;		
-	viewToLaunch.transform = CGAffineTransformMakeScale(0.00001, 0.00001);
-	
-	if (!overlayView) 
-	{
-		overlayView = [[UIView alloc] initWithFrame:launcherView.bounds];
-		overlayView.backgroundColor = [UIColor blackColor];
-		overlayView.alpha = 0;
-		overlayView.autoresizesSubviews = YES;
-		overlayView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleBottomMargin;
-		[self.view addSubview:overlayView];
-	}
-	
-	launcherView.frame = overlayView.bounds;
-	launcherView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-	
-	[UIView animateWithDuration:0.3 
-						  delay:0 
-						options:UIViewAnimationOptionCurveEaseIn 
-					 animations:^{
-						 viewToLaunch.alpha = 1.0;		
-						 viewToLaunch.transform = CGAffineTransformIdentity;
-						 overlayView.alpha = 0.7;
-					 }
-					 completion:nil];
+-(void)clearSavedLauncherItems {
+    [self saveToUserDefaults:nil key:@"myLauncherView"];
+    [self saveToUserDefaults:nil key:@"myLauncherViewImmovable"];
 }
 
--(void)launcherViewDidBeginEditing:(id)sender
-{
-	[self.navigationItem setRightBarButtonItem:[[[UIBarButtonItem alloc] 
-												 initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-												 target:launcherView action:@selector(endEditing)] autorelease] animated:YES];
-}
-
--(void)launcherViewDidEndEditing:(id)sender
-{
-	[self.navigationItem setRightBarButtonItem:nil];
-}
-
-- (void)closeView 
-{	
-	UIView *viewToClose = [[launcherNavigationController topViewController] view];
-	viewToClose.transform = CGAffineTransformIdentity;
-	
-	[UIView animateWithDuration:0.3 
-						  delay:0 
-						options:UIViewAnimationOptionCurveEaseOut 
-					 animations:^{
-						 viewToClose.alpha = 0;		
-						 viewToClose.transform = CGAffineTransformMakeScale(0.00001, 0.00001);
-						 overlayView.alpha = 0;
-					 }
-					 completion:^(BOOL finished){
-						 [[launcherNavigationController topViewController] viewWillDisappear:NO];
-						 [[launcherNavigationController view] removeFromSuperview];
-						 [[launcherNavigationController topViewController] viewDidDisappear:NO];
-						 [self.parentViewController viewWillAppear:NO];
-						 [self.parentViewController viewDidAppear:NO];
-					 }];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-{	
-	if(launcherNavigationController)
-		[launcherNavigationController setNavigationBarHidden:YES];
-	
-	return YES;
-}
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-	if(launcherNavigationController)	
-		[launcherNavigationController setNavigationBarHidden:NO];
-	
-	overlayView.frame = launcherView.frame;
-	[launcherView layoutLauncher];
-}
-
--(NSArray*)retrieveFromUserDefaults:(NSString *)key
-{
+-(id)retrieveFromUserDefaults:(NSString *)key {
 	NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
-	NSArray *val = nil;
 	
 	if (standardUserDefaults) 
-		val = [standardUserDefaults objectForKey:key];
+		return [standardUserDefaults objectForKey:key];
+	return nil;
+}
+
+-(void)saveToUserDefaults:(id)object key:(NSString *)key {
+    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
 	
-	return val;
+	if (standardUserDefaults) 
+	{
+		[standardUserDefaults setObject:object forKey:key];
+		[standardUserDefaults synchronize];
+	}
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
-- (void)viewDidUnload 
-{
-    [super viewDidUnload];
-}
-
-- (void)dealloc 
-{
-	[launcherNavigationController release];
-	[launcherView release];
-    [super dealloc];
-}
-
 
 @end
