@@ -2,8 +2,8 @@ myLauncher 2.0.1 (01/04/11)
 ===========================
 * Optimised icon animation
 
-myLauncher 2.0
-==============
+myLauncher 2.0.0 (17/03/11)
+===========================
 * Added iPad Compatibility
 * Added immovable item capabilities
 * Added ability to disable editing of items

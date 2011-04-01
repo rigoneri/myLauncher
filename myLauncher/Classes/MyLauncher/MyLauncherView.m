@@ -270,7 +270,7 @@ static const CGFloat iPadLandscapeYPadding = 30;
 }
 
 -(void)layoutItems
-{	
+{
 	CGFloat pageWidth = self.pagesScrollView.frame.size.width;
 	
     [self setupCurrentViewLayoutSettings];
@@ -462,6 +462,7 @@ static const CGFloat iPadLandscapeYPadding = 30;
 			NSInteger dragItemColumn = floor(dragItemX/distanceWidth); // item width
 			NSInteger dragItemRow = floor(dragItemY/distanceHeight); // item height
 			NSInteger dragIndex = (dragItemRow * columnCount) + dragItemColumn;
+            NSInteger currentPageIndex = floor(self.pagesScrollView.contentOffset.x/self.pagesScrollView.frame.size.width);
             
 			if(sindex != dragIndex)
 			{
@@ -472,7 +473,6 @@ static const CGFloat iPadLandscapeYPadding = 30;
                         [[self.draggingItem retain] autorelease];
                         [itemPage removeObjectAtIndex:sindex];
                         
-                        NSInteger currentPageIndex = floor(self.pagesScrollView.contentOffset.x/self.pagesScrollView.frame.size.width);
                         NSMutableArray *currentPage = [self.pages objectAtIndex:currentPageIndex];
                         if(dragIndex > currentPage.count)
                         {
@@ -494,8 +494,6 @@ static const CGFloat iPadLandscapeYPadding = 30;
 			}
 			
 			//Moving Pages
-			NSInteger currentPageIndex = floor(self.pagesScrollView.contentOffset.x/self.pagesScrollView.frame.size.width);
-			
 			if(location.x + self.pagesScrollView.contentOffset.x < self.pagesScrollView.contentOffset.x + 20)
 			{
 				if(currentPageIndex > 0)
@@ -546,12 +544,13 @@ static const CGFloat iPadLandscapeYPadding = 30;
 		self.pageControl.currentPage = currentPageIndex;
 		
 		CGPoint offset = CGPointMake(newX, 0);
-		[self.pagesScrollView setContentOffset:offset animated:YES];
-		self.draggingItem.frame = CGRectMake(self.draggingItem.frame.origin.x + self.pagesScrollView.frame.size.width, 
-                                             self.draggingItem.frame.origin.y, 
-                                             self.draggingItem.frame.size.width, 
-                                             self.draggingItem.frame.size.height);	
-		
+        [UIView animateWithDuration:0.3 animations:^{
+            [self.pagesScrollView setContentOffset:offset]; 
+            self.draggingItem.frame = CGRectMake(self.draggingItem.frame.origin.x + self.pagesScrollView.frame.size.width, 
+                                                 self.draggingItem.frame.origin.y, 
+                                                 self.draggingItem.frame.size.width, 
+                                                 self.draggingItem.frame.size.height);
+        }];	
 	}
 	else if([(NSString*)timer.userInfo isEqualToString:@"left"])
 	{
@@ -559,11 +558,13 @@ static const CGFloat iPadLandscapeYPadding = 30;
 		self.pageControl.currentPage = --currentPageIndex;
 		CGFloat newX = self.pagesScrollView.contentOffset.x - self.pagesScrollView.frame.size.width;
 		CGPoint offset = CGPointMake(newX, 0);
-		[self.pagesScrollView setContentOffset:offset animated:YES];
-		self.draggingItem.frame = CGRectMake(self.draggingItem.frame.origin.x - self.pagesScrollView.frame.size.width, 
-                                             self.draggingItem.frame.origin.y, 
-                                             self.draggingItem.frame.size.width, 
-                                             self.draggingItem.frame.size.height);	
+        [UIView animateWithDuration:0.3 animations:^{
+            [self.pagesScrollView setContentOffset:offset];
+            self.draggingItem.frame = CGRectMake(self.draggingItem.frame.origin.x - self.pagesScrollView.frame.size.width, 
+                                                 self.draggingItem.frame.origin.y, 
+                                                 self.draggingItem.frame.size.width, 
+                                                 self.draggingItem.frame.size.height);
+        }];
 	}
 }
 
