@@ -1,3 +1,7 @@
+myLauncher 2.0.2 (09/05/11)
+===========================
+* Added calls to launched navigation views for ViewWillAppear, ViewWillDisappear, ViewDidAppear, and ViewDidDisappear
+
 myLauncher 2.0.1 (01/04/11)
 ===========================
 * Optimised icon animation

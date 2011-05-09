@@ -1,4 +1,4 @@
-myLauncher 2.0.1 (01/04/11)
+myLauncher 2.0.2 (09/05/11)
 ===========================
 
 myLauncher is a lightweight open source Objective-C library that allows you to add an iPhone like launcher into your iPhone or iPad app. This library was founded by rigoneri (see section below) and later taken on by Jarada.
@@ -37,7 +37,7 @@ Follow the following steps in order to add myLauncher into your project:
 4. In your application delegate header file make the following changes (AppDelegate.h):
 	* Import the RootViewController header file:
 		
-		#import "RootViewController.h"
+		import "RootViewController.h"
 		
 5. In your application delegate implementation file make the following changes (AppDelegate.m):	
 	* Inside applicationDidFinishLaunching modify your UINavigationController to initialize with RootViewController:
@@ -47,12 +47,12 @@ Follow the following steps in order to add myLauncher into your project:
 6. In your prefix file make the following changes (AppName_Prefix.pch):	
 	* Outside the ifdef define the shortcut for color:
 	
-		#define COLOR(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+		define COLOR(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 		
 7. In your RootViewController (RootViewController.m):
 	* Import your view controllers before the @implementation block, for example:
 	
-		#import "ItemViewController.h"
+		import "ItemViewController.h"
 		
 	* In the loadView method add your ItemViewController into appControllers:
 	

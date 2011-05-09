@@ -25,6 +25,7 @@
 -(NSArray*)retrieveFromUserDefaults:(NSString *)key;
 -(void)saveToUserDefaults:(id)object key:(NSString *)key;
 @property (nonatomic, retain) UIView *overlayView;
+@property (nonatomic, retain) UIViewController *currentViewController;
 @end
 
 @implementation MyLauncherViewController
@@ -33,6 +34,7 @@
 @synthesize launcherView = _launcherView;
 @synthesize appControllers = _appControllers;
 @synthesize overlayView = _overlayView;
+@synthesize currentViewController = _currentViewController;
 
 #pragma mark - ViewController lifecycle
 
@@ -89,6 +91,7 @@
 	self.launcherNavigationController = nil;
     self.launcherView = nil;
     self.overlayView = nil;
+    self.currentViewController = nil;
     [super dealloc];
 }
 
@@ -103,6 +106,7 @@
 	
 	[self setLauncherNavigationController:[[[UINavigationController alloc] initWithRootViewController:controller] autorelease]];	
 	[[self.launcherNavigationController topViewController] setTitle:item.controllerTitle];
+    [self.launcherNavigationController setDelegate:self];
 	
 	if(self.view.frame.size.width == 480)
 		self.launcherNavigationController.view.frame = CGRectMake(0, 0, 480, 320);
@@ -169,9 +173,28 @@
 						 [[self.launcherNavigationController topViewController] viewWillDisappear:NO];
 						 [[self.launcherNavigationController view] removeFromSuperview];
 						 [[self.launcherNavigationController topViewController] viewDidDisappear:NO];
+                         [self.launcherNavigationController setDelegate:nil];
+                         [self setCurrentViewController:nil];
 						 [self.parentViewController viewWillAppear:NO];
 						 [self.parentViewController viewDidAppear:NO];
 					 }];
+}
+
+#pragma mark - UINavigationControllerDelegate
+
+-(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.currentViewController) {
+        [self.currentViewController viewWillDisappear:animated];
+    }
+    [viewController viewWillAppear:animated];
+}
+
+-(void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if (self.currentViewController) {
+        [self.currentViewController viewDidDisappear:animated];
+    }
+    [viewController viewDidAppear:animated];
+    [self setCurrentViewController:viewController];
 }
 
 #pragma mark - myLauncher caching

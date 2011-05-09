@@ -22,7 +22,7 @@
 #import "MyLauncherView.h"
 #import "MyLauncherItem.h"
 
-@interface MyLauncherViewController : UIViewController <MyLauncherViewDelegate> {
+@interface MyLauncherViewController : UIViewController <MyLauncherViewDelegate, UINavigationControllerDelegate> {
 	BOOL savedItems;
 }
 
