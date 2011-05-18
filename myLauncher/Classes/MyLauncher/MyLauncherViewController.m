@@ -97,8 +97,12 @@
 
 #pragma mark - MyLauncherItem management
 
+-(BOOL)hasSavedLauncherItems {
+    return ([self retrieveFromUserDefaults:@"myLauncherView"] != nil);
+}
+
 -(void)launcherViewItemSelected:(MyLauncherItem*)item {
-    if (![self appControllers]) {
+    if (![self appControllers] || [self launcherNavigationController]) {
         return;
     }
     Class viewCtrClass = [[self appControllers] objectForKey:[item controllerStr]];
@@ -235,7 +239,6 @@
 			[savedPage release];
 		}
 		
-        savedItems = YES;
 		return [savedLauncherItems autorelease];
 	}
     

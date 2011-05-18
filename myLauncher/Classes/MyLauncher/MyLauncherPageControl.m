@@ -100,15 +100,15 @@
 	self.hidden = count <= 1 ? YES : NO;
 	
 	numberOfPages = count;
-	if (currentPage > [self numberOfPages]-1) currentPage = [self numberOfPages] - 1;
+	if (currentPage > [self numberOfPages]-1) [self setCurrentPage:[self numberOfPages] - 1];
 	
 	[self setNeedsDisplay];
 }
 
 - (void)setCurrentPage:(NSInteger)page 
 {
-	if (page < 0) page = 0;
 	if (page > [self numberOfPages]-1) page = [self numberOfPages] - 1;
+    if (page < 0) page = 0;
 	
 	currentPage = page;
 	[self setNeedsDisplay];

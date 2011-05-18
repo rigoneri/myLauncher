@@ -45,6 +45,7 @@
     CGFloat minY;
     CGFloat paddingX;
     CGFloat paddingY;
+    CGFloat navigationalHeight;
 }
 
 @property (nonatomic) BOOL editingAllowed;

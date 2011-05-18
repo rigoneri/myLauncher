@@ -1,3 +1,11 @@
+myLauncher 2.0.3 (18/05/11)
+===========================
+* Setting MyLauncherView pages property now refreshes the icons
+* Improved Saved Launcher Items support
+* Bug fix to prevent multiple icons being selected from multiple finger touches
+* Bug fix to prevent MyLauncherPageControl from having -1 numberOfPages
+* Bug fix to ensure MyLauncherPageControl stays on the screen after icons have been refreshed
+
 myLauncher 2.0.2 (09/05/11)
 ===========================
 * Added calls to launched navigation views for ViewWillAppear, ViewWillDisappear, ViewDidAppear, and ViewDidDisappear

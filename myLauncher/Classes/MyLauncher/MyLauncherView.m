@@ -109,6 +109,7 @@ static const CGFloat iPadLandscapeYPadding = 30;
 		itemsAdded = NO;
         editingAllowed = YES;
         numberOfImmovableItems = -1;
+        navigationalHeight = 0;
 		[self setupCurrentViewLayoutSettings];
 		
 		[self setPagesScrollView:[[[MyLauncherScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height - pControllHeight)] autorelease]];
@@ -152,6 +153,24 @@ static const CGFloat iPadLandscapeYPadding = 30;
 }
 
 #pragma mark - Setters
+
+-(void)setPages:(NSMutableArray *)pages {
+    if (pages != _pages) {
+        if (_pages) {
+            for (NSArray *page in _pages) {
+                for (UIView *item in page) {
+                    [item removeFromSuperview];
+                }
+            }
+        }
+        
+        [_pages release];
+        _pages = [pages retain];
+        itemsAdded = NO;
+        navigationalHeight = 45;
+        [self layoutLauncher];
+    }
+}
 
 -(void)setPages:(NSMutableArray *)pages numberOfImmovableItems:(NSInteger)items {
     [self setPages:pages];
@@ -259,7 +278,7 @@ static const CGFloat iPadLandscapeYPadding = 30;
 -(void)layoutLauncher
 {
 	self.pagesScrollView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - pControllHeight);
-	self.pageControl.frame = CGRectMake(0, self.frame.size.height - pControllHeight, self.frame.size.width, pControllHeight);
+	self.pageControl.frame = CGRectMake(0, self.frame.size.height - pControllHeight - navigationalHeight, self.frame.size.width, pControllHeight);
 	[self.pageControl setNeedsDisplay];
     
     [UIView beginAnimations:nil context:nil];

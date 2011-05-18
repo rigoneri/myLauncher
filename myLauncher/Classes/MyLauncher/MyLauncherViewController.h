@@ -23,13 +23,13 @@
 #import "MyLauncherItem.h"
 
 @interface MyLauncherViewController : UIViewController <MyLauncherViewDelegate, UINavigationControllerDelegate> {
-	BOOL savedItems;
 }
 
 @property (nonatomic, retain) UINavigationController *launcherNavigationController;
 @property (nonatomic, retain) MyLauncherView *launcherView;
 @property (nonatomic, retain) NSMutableDictionary *appControllers;
 
+-(BOOL)hasSavedLauncherItems;
 -(void)clearSavedLauncherItems;
 
 @end
