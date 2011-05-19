@@ -180,9 +180,9 @@ static const CGFloat iPadLandscapeYPadding = 30;
 #pragma mark - View Orientation
 
 - (void)setCurrentOrientation:(UIInterfaceOrientation)newOrientation {
-    if (newOrientation != currentOrientation || 
-        newOrientation != UIDeviceOrientationUnknown || 
-        newOrientation != UIDeviceOrientationFaceUp || 
+    if (newOrientation != currentOrientation && 
+        newOrientation != UIDeviceOrientationUnknown && 
+        newOrientation != UIDeviceOrientationFaceUp && 
         newOrientation != UIDeviceOrientationFaceDown) {
         currentOrientation = newOrientation;
     }

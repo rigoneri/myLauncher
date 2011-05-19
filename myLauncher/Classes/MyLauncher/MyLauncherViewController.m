@@ -71,6 +71,10 @@
 	return YES;
 }
 
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [self.launcherView setCurrentOrientation:toInterfaceOrientation];
+}
+
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
 	if(self.launcherNavigationController)	
 		[self.launcherNavigationController setNavigationBarHidden:NO];
@@ -114,6 +118,8 @@
 	
 	if(self.view.frame.size.width == 480)
 		self.launcherNavigationController.view.frame = CGRectMake(0, 0, 480, 320);
+    if(self.view.frame.size.width == 1024)
+        self.launcherNavigationController.view.frame = CGRectMake(0, 0, 1024, 768);
 	
 	[controller.navigationItem setLeftBarButtonItem:
 	 [[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"launcher"]
@@ -178,6 +184,7 @@
 						 [[self.launcherNavigationController view] removeFromSuperview];
 						 [[self.launcherNavigationController topViewController] viewDidDisappear:NO];
                          [self.launcherNavigationController setDelegate:nil];
+                         [self setLauncherNavigationController:nil];
                          [self setCurrentViewController:nil];
 						 [self.parentViewController viewWillAppear:NO];
 						 [self.parentViewController viewDidAppear:NO];
