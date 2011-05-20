@@ -320,6 +320,7 @@ static const CGFloat iPadLandscapeYPadding = 30;
 				[item addTarget:self action:@selector(itemTouchedUpInside:) forControlEvents:UIControlEventTouchUpInside];
 				[item addTarget:self action:@selector(itemTouchedUpOutside:) forControlEvents:UIControlEventTouchUpOutside];
 				[item addTarget:self action:@selector(itemTouchedDown:) forControlEvents:UIControlEventTouchDown];
+                [item addTarget:self action:@selector(itemTouchCancelled:) forControlEvents:UIControlEventTouchCancel];
 				[self.pagesScrollView addSubview:item];
 			}
 			item.closeButton.hidden = editing ? NO : YES;
@@ -436,6 +437,15 @@ static const CGFloat iPadLandscapeYPadding = 30;
         
 		self.itemHoldTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(itemHoldTimer:) userInfo:item repeats:NO];
 	}
+}
+
+-(void)itemTouchCancelled:(MyLauncherItem *)item
+{
+    if (editing) {
+        [self itemTouchedUpInside:item];
+    } else {
+        [self itemTouchedUpOutside:item];
+    }
 }
 
 -(void)itemHoldTimer:(NSTimer *)timer
