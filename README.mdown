@@ -3,13 +3,13 @@ myLauncher 2.1 (03/06/11)
 
 myLauncher is a lightweight open source Objective-C library that allows you to add an iPhone like launcher into your iPhone or iPad app. This library was founded by rigoneri (see section below) and later taken on by Jarada.
 
-[![](http://img713.imageshack.us/img713/6910/mylauncher2iphone1.th.png)](http://imageshack.us/photo/my-images/713/mylauncher2iphone1.png/)
-[![](http://img219.imageshack.us/img219/5528/mylauncher2iphone2.th.png)](http://imageshack.us/photo/my-images/219/mylauncher2iphone2.png/)
-[![](http://img689.imageshack.us/img689/6515/mylauncher2iphone3.th.png)](http://imageshack.us/photo/my-images/689/mylauncher2iphone3.png/)
+[![](http://i107.photobucket.com/albums/m308/Jarada/myLauncher2/MyLauncher2-iPhone-1.png)](http://i107.photobucket.com/albums/m308/Jarada/myLauncher2/MyLauncher2-iPhone-1.png)
+[![](http://i107.photobucket.com/albums/m308/Jarada/myLauncher2/MyLauncher2-iPhone-2.png)](http://i107.photobucket.com/albums/m308/Jarada/myLauncher2/MyLauncher2-iPhone-2.png)
+[![](http://i107.photobucket.com/albums/m308/Jarada/myLauncher2/MyLauncher2-iPhone-3.png)](http://i107.photobucket.com/albums/m308/Jarada/myLauncher2/MyLauncher2-iPhone-3.png)
 
-[![](http://img705.imageshack.us/img705/5830/mylauncher2ipad1.th.png)](http://imageshack.us/photo/my-images/705/mylauncher2ipad1.png/)
-[![](http://img21.imageshack.us/img21/4773/mylauncher2ipad2.th.png)](http://imageshack.us/photo/my-images/21/mylauncher2ipad2.png/)
-[![](http://img862.imageshack.us/img862/3370/mylauncher2ipad3.th.png)](http://imageshack.us/photo/my-images/862/mylauncher2ipad3.png/)
+[![](http://i107.photobucket.com/albums/m308/Jarada/myLauncher2/MyLauncher2-iPad-1.png)](http://i107.photobucket.com/albums/m308/Jarada/myLauncher2/MyLauncher2-iPad-1.png)
+[![](http://i107.photobucket.com/albums/m308/Jarada/myLauncher2/MyLauncher2-iPad-2.png)](http://i107.photobucket.com/albums/m308/Jarada/myLauncher2/MyLauncher2-iPad-2.png)
+[![](http://i107.photobucket.com/albums/m308/Jarada/myLauncher2/MyLauncher2-iPad-3.png)](http://i107.photobucket.com/albums/m308/Jarada/myLauncher2/MyLauncher2-iPad-3.png)
 
 New in this Version
 ===================
@@ -82,7 +82,7 @@ Credits
 
 * Jarada - Taking on Version 2 of myLauncher. Follow Jarada on twitter @[codestrikeapps][]; website to follow.
 
-* SPaulus - Special thanks to Sascha Paulus at @[spaulus.com][] for the CustomBadge functionality.
+* SPaulus - Special thanks to Sascha Paulus at [spaulus.com][] for the CustomBadge functionality.
 
 [myLauncher Demo Video]: http://www.youtube.com/watch?v=D6SVYLfAO-Q
 [Google Group]: http://groups.google.com/group/mylauncher
