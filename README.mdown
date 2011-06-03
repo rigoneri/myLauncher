@@ -1,13 +1,20 @@
-myLauncher 2.0.5 (20/05/11)
+myLauncher 2.1 (03/06/11)
 ===========================
 
 myLauncher is a lightweight open source Objective-C library that allows you to add an iPhone like launcher into your iPhone or iPad app. This library was founded by rigoneri (see section below) and later taken on by Jarada.
 
-[![](http://farm5.static.flickr.com/4118/4940057825_93a9c78eb8_m.jpg)](http://farm5.static.flickr.com/4118/4940057825_93a9c78eb8_z.jpg)
-[![](http://farm5.static.flickr.com/4138/4940644638_9796997395_m.jpg)](http://farm5.static.flickr.com/4138/4940644638_9796997395_z.jpg)
-[![](http://farm5.static.flickr.com/4095/4940057993_a2c89167bd_m.jpg)](http://farm5.static.flickr.com/4095/4940057993_a2c89167bd_z.jpg)
+[![](http://img713.imageshack.us/img713/6910/mylauncher2iphone1.th.png)](http://imageshack.us/photo/my-images/713/mylauncher2iphone1.png/)
+[![](http://img219.imageshack.us/img219/5528/mylauncher2iphone2.th.png)](http://imageshack.us/photo/my-images/219/mylauncher2iphone2.png/)
+[![](http://img689.imageshack.us/img689/6515/mylauncher2iphone3.th.png)](http://imageshack.us/photo/my-images/689/mylauncher2iphone3.png/)
 
-[myLauncher Demo Video][]
+[![](http://img705.imageshack.us/img705/5830/mylauncher2ipad1.th.png)](http://imageshack.us/photo/my-images/705/mylauncher2ipad1.png/)
+[![](http://img21.imageshack.us/img21/4773/mylauncher2ipad2.th.png)](http://imageshack.us/photo/my-images/21/mylauncher2ipad2.png/)
+[![](http://img862.imageshack.us/img862/3370/mylauncher2ipad3.th.png)](http://imageshack.us/photo/my-images/862/mylauncher2ipad3.png/)
+
+New in this Version
+===================
+
+Ability to have badges on your items!
 
 Community
 =========
@@ -67,18 +74,20 @@ Apps using myLauncher
 
 Let me know if you use myLauncher 2 in your app so I can add it to a list here.
 
-Rigoneri
-========
+* EuroIRP - an application built for the European Independent Research Providers, at @[euroirp.com][] (App Store link to follow).
 
-The founder of myLauncher. Follow Rigoneri on twitter @[rigoneri][] and checkout his apps at [rigoneri.com][].
+Credits
+=======
+* Rigoneri - The founder of myLauncher. Follow Rigoneri on twitter @[rigoneri][] and checkout his apps at [rigoneri.com][].
 
-Jarada
-======
+* Jarada - Taking on Version 2 of myLauncher. Follow Jarada on twitter @[codestrikeapps][]; website to follow.
 
-Taking on the control of myLauncher. Follow Jarada on twitter @[codestrikeapps][]; website to follow.
+* SPaulus - Special thanks to Sascha Paulus at @[spaulus.com][] for the CustomBadge functionality.
 
 [myLauncher Demo Video]: http://www.youtube.com/watch?v=D6SVYLfAO-Q
 [Google Group]: http://groups.google.com/group/mylauncher
+[euroirp.com]: http://www.euroirp.com/
 [rigoneri]: http://www.twitter.com/rigoneri
 [rigoneri.com]: http://www.rigoneri.com
 [codestrikeapps]: http://www.twitter.com/codestrikeapps
+[spaulus.com]: http://www.spaulus.com/

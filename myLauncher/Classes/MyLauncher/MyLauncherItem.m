@@ -19,6 +19,8 @@
 //
 
 #import "MyLauncherItem.h"
+#import "CustomBadge.h"
+
 @implementation MyLauncherItem
 
 @synthesize delegate = _delegate;
@@ -28,6 +30,7 @@
 @synthesize closeButton = _closeButton;
 @synthesize controllerStr = _controllerStr;
 @synthesize controllerTitle = _controllerTitle;
+@synthesize badge = _badge;
 
 #pragma mark - Lifecycle
 
@@ -64,8 +67,11 @@
 	self.delegate = nil;
     self.title = nil;
     self.image = nil;
+    self.iPadImage = nil;
     self.controllerStr = nil;
+    self.controllerTitle = nil;
     self.closeButton = nil;
+    self.badge = nil;
 	[super dealloc];
 }
 
@@ -91,7 +97,14 @@
 	CGFloat itemImageY = (self.bounds.size.height/2) - (itemImage.bounds.size.height/2);
 	itemImage.frame = CGRectMake(itemImageX, itemImageY, itemImage.bounds.size.width, itemImage.bounds.size.height);
 	[self addSubview:itemImage];
+    CGFloat itemImageWidth = itemImage.bounds.size.width;
 	[itemImage release];
+    
+    if(self.badge) {
+        self.badge.frame = CGRectMake((itemImageX + itemImageWidth) - (self.badge.frame.size.width - 6), 
+                                      itemImageY-6, self.badge.frame.size.width, self.badge.frame.size.height);
+        [self addSubview:self.badge];
+    }
 	
 	if(deletable)
 	{
@@ -189,6 +202,24 @@
 -(BOOL)deletable
 {
 	return deletable;
+}
+
+-(NSString *)badgeText {
+    return self.badge.badgeText;
+}
+
+-(void)setBadgeText:(NSString *)text {
+    if (text && [text length] > 0) {
+        [self setBadge:[CustomBadge customBadgeWithString:text]];
+    } else {
+        [self setBadge:nil];
+    }
+    [self layoutItem];
+}
+
+-(void)setCustomBadge:(CustomBadge *)customBadge {
+    [self setBadge:customBadge];
+    [self layoutItem];
 }
 
 @end

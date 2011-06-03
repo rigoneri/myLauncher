@@ -20,6 +20,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class CustomBadge;
+
 @protocol MyLauncherItemDelegate <NSObject>
 -(void)didDeleteItem:(id)item;
 @end
@@ -36,6 +38,7 @@
 @property (nonatomic, retain) NSString *controllerStr;
 @property (nonatomic, retain) NSString *controllerTitle;
 @property (nonatomic, retain) UIButton *closeButton;
+@property (nonatomic, retain) CustomBadge *badge;
 
 -(id)initWithTitle:(NSString *)title image:(NSString *)image target:(NSString *)targetControllerStr deletable:(BOOL)_deletable;
 -(id)initWithTitle:(NSString *)title iPhoneImage:(NSString *)image iPadImage:(NSString *)iPadImage target:(NSString *)targetControllerStr targetTitle:(NSString *)targetTitle deletable:(BOOL)_deletable;
@@ -44,5 +47,8 @@
 -(BOOL)dragging;
 -(BOOL)deletable;
 
+-(NSString *)badgeText;
+-(void)setBadgeText:(NSString *)text;
+-(void)setCustomBadge:(CustomBadge *)customBadge;
 
 @end

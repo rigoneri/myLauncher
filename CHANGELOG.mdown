@@ -1,3 +1,10 @@
+myLauncher 2.1.0 (03/06/11)
+===========================
+* Added CustomBadge capability's from Sascha Paulus at spaulus.com
+* Added additional methods to allow for control over the item layout animation
+* Improved MyLauncherPageControl relocating based on view frame changes (using KVO)
+* Bug fix for a few minor leaks
+
 myLauncher 2.0.5 (20/05/11)
 ===========================
 * Bug fix for icon stability when scrolling

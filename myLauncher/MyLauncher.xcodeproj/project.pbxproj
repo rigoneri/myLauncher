@@ -26,6 +26,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		7DA45DCD1316B0C700D5FA85 /* itemImage-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DA45DCB1316B0C700D5FA85 /* itemImage-iPad.png */; };
+		7DC0590F1397988B00E0EAA9 /* CustomBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC0590E1397988B00E0EAA9 /* CustomBadge.m */; };
 		7DF382DA13326D0100738192 /* Icon-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF382D913326D0100738192 /* Icon-iPad.png */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* MyLauncher_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLauncher_Prefix.pch; sourceTree = "<group>"; };
 		7DA45DCB1316B0C700D5FA85 /* itemImage-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "itemImage-iPad.png"; path = "imgs/itemImage-iPad.png"; sourceTree = "<group>"; };
+		7DC0590D1397988B00E0EAA9 /* CustomBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomBadge.h; path = ../../../CustomBadge/Classes/CustomBadge.h; sourceTree = "<group>"; };
+		7DC0590E1397988B00E0EAA9 /* CustomBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomBadge.m; path = ../../../CustomBadge/Classes/CustomBadge.m; sourceTree = "<group>"; };
 		7DF382D913326D0100738192 /* Icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-iPad.png"; path = "imgs/Icon-iPad.png"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* MyLauncher-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MyLauncher-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +115,8 @@
 		0F975B02122AFC3B00F678EB /* MyLauncher */ = {
 			isa = PBXGroup;
 			children = (
+				7DC0590D1397988B00E0EAA9 /* CustomBadge.h */,
+				7DC0590E1397988B00E0EAA9 /* CustomBadge.m */,
 				0F975C97122B4FAE00F678EB /* MyLauncherViewController.h */,
 				0F975C98122B4FAE00F678EB /* MyLauncherViewController.m */,
 				0F975C95122B4FAE00F678EB /* MyLauncherView.h */,
@@ -260,6 +265,7 @@
 				0F975C9B122B4FAE00F678EB /* MyLauncherScrollView.m in Sources */,
 				0F975C9C122B4FAE00F678EB /* MyLauncherView.m in Sources */,
 				0F975C9D122B4FAE00F678EB /* MyLauncherViewController.m in Sources */,
+				7DC0590F1397988B00E0EAA9 /* CustomBadge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

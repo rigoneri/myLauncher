@@ -109,7 +109,6 @@ static const CGFloat iPadLandscapeYPadding = 30;
 		itemsAdded = NO;
         editingAllowed = YES;
         numberOfImmovableItems = -1;
-        navigationalHeight = 0;
 		[self setupCurrentViewLayoutSettings];
 		
 		[self setPagesScrollView:[[[MyLauncherScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height - pControllHeight)] autorelease]];
@@ -131,6 +130,8 @@ static const CGFloat iPadLandscapeYPadding = 30;
 		self.pageControl.backgroundColor = [UIColor clearColor];
 		[self.pageControl addTarget:self action:@selector(pageChanged) forControlEvents:UIControlEventValueChanged];
 		[self addSubview:self.pageControl];
+        
+        [self addObserver:self forKeyPath:@"frame" options:0 context:nil];
     }
     return self;
 }
@@ -149,12 +150,18 @@ static const CGFloat iPadLandscapeYPadding = 30;
     self.itemHoldTimer = nil;
     self.movePagesTimer = nil;
     self.draggingItem = nil;
+    
+    [self removeObserver:self forKeyPath:@"frame"];
     [super dealloc];
 }
 
 #pragma mark - Setters
 
 -(void)setPages:(NSMutableArray *)pages {
+    [self setPages:pages animated:YES];
+}
+
+-(void)setPages:(NSMutableArray *)pages animated:(BOOL)animated {
     if (pages != _pages) {
         if (_pages) {
             for (NSArray *page in _pages) {
@@ -167,13 +174,16 @@ static const CGFloat iPadLandscapeYPadding = 30;
         [_pages release];
         _pages = [pages retain];
         itemsAdded = NO;
-        navigationalHeight = 45;
-        [self layoutLauncher];
+        [self layoutLauncherAnimated:animated];
     }
 }
 
 -(void)setPages:(NSMutableArray *)pages numberOfImmovableItems:(NSInteger)items {
-    [self setPages:pages];
+    [self setPages:pages numberOfImmovableItems:items animated:YES];
+}
+
+-(void)setPages:(NSMutableArray *)pages numberOfImmovableItems:(NSInteger)items animated:(BOOL)animated {
+    [self setPages:pages animated:animated];
     [self setNumberOfImmovableItems:items];
 }
 
@@ -194,15 +204,9 @@ static const CGFloat iPadLandscapeYPadding = 30;
     return currentOrientation;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-{
-    [self setCurrentOrientation:toInterfaceOrientation];
-	return YES;
-}
+#pragma mark - ScrollView and PageControl Management
 
-#pragma mark - ScrollView Management
-
--(void)pageChanged
+- (void)pageChanged
 {
 	self.pagesScrollView.contentOffset = CGPointMake(self.pageControl.currentPage * self.pagesScrollView.frame.size.width, 0);
 }
@@ -212,6 +216,19 @@ static const CGFloat iPadLandscapeYPadding = 30;
 	self.pageControl.currentPage = floor((self.pagesScrollView.contentOffset.x - self.pagesScrollView.frame.size.width / 2) / 
                                          self.pagesScrollView.frame.size.width) + 1;
 	
+}
+
+- (void)updateFrames
+{
+    self.pagesScrollView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - pControllHeight);
+	self.pageControl.frame = CGRectMake(0, self.frame.size.height - pControllHeight, self.frame.size.width, pControllHeight);
+	[self.pageControl setNeedsDisplay];
+}
+
+-(void)didChangeValueForKey:(NSString *)key {
+    if ([key isEqualToString:@"frame"]) {
+        [self updateFrames];
+    }
 }
 
 #pragma mark - Layout Settings
@@ -277,13 +294,17 @@ static const CGFloat iPadLandscapeYPadding = 30;
 
 -(void)layoutLauncher
 {
-	self.pagesScrollView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height - pControllHeight);
-	self.pageControl.frame = CGRectMake(0, self.frame.size.height - pControllHeight - navigationalHeight, self.frame.size.width, pControllHeight);
-	[self.pageControl setNeedsDisplay];
+	[self layoutLauncherAnimated:YES];
+}
+
+-(void)layoutLauncherAnimated:(BOOL)animated
+{
+    [self updateFrames];
     
-    [UIView beginAnimations:nil context:nil];
-	[self layoutItems];
-    [UIView commitAnimations];
+    [UIView animateWithDuration:animated ? 0.3 : 0
+                     animations:^{
+                         [self layoutItems];
+                     }];
     
 	[self pageChanged];
 }
@@ -386,10 +407,10 @@ static const CGFloat iPadLandscapeYPadding = 30;
 		[self.draggingItem setDragging:NO];
 		self.draggingItem = nil;
 		self.pagesScrollView.scrollEnabled = YES;
-		[UIView beginAnimations:nil context:nil];
-		[UIView setAnimationDuration:0.3];
-		[self layoutItems];
-		[UIView commitAnimations];
+		[UIView animateWithDuration:0.3 
+                         animations:^{
+                             [self layoutItems]; 
+                         }];
 	}
 	else 
 	{
@@ -412,10 +433,10 @@ static const CGFloat iPadLandscapeYPadding = 30;
 	[self.draggingItem setDragging:NO];
 	self.draggingItem = nil;
 	self.pagesScrollView.scrollEnabled = YES;
-	[UIView beginAnimations:nil context:nil];
-	[UIView setAnimationDuration:0.3];
-	[self layoutItems];
-	[UIView commitAnimations];
+	[UIView animateWithDuration:0.3 
+                     animations:^{
+                         [self layoutItems]; 
+                     }];
 }
 
 -(void)itemTouchedDown:(MyLauncherItem *)item
@@ -513,10 +534,10 @@ static const CGFloat iPadLandscapeYPadding = 30;
                         {
                             [currentPage insertObject:self.draggingItem atIndex:dragIndex];
                             [self organizePages];
-                            [UIView beginAnimations:nil context:nil];
-                            [UIView setAnimationDuration:0.3];
-                            [self layoutItems];
-                            [UIView commitAnimations];
+                            [UIView animateWithDuration:0.3 
+                                             animations:^{
+                                                 [self layoutItems]; 
+                                             }];
                         }
                     }
                 }
@@ -736,10 +757,10 @@ static const CGFloat iPadLandscapeYPadding = 30;
                 if (i < numberOfImmovableItems)
                     numberOfImmovableItems--;
 				[page removeObjectAtIndex:i];
-				[UIView beginAnimations:nil context:nil];
-				[UIView setAnimationDuration:0.3];
-				[self layoutItems];
-				[UIView commitAnimations];
+                [UIView animateWithDuration:0.3 
+                                 animations:^{
+                                     [self layoutItems]; 
+                                 }];
 				return;
 			}
 			i++;

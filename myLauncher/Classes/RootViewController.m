@@ -20,6 +20,7 @@
 
 #import "RootViewController.h"
 #import "MyLauncherItem.h"
+#import "CustomBadge.h"
 #import "ItemViewController.h"
 
 
@@ -40,7 +41,7 @@
 	{
 		[self.launcherView setPages:[NSMutableArray arrayWithObjects: 
                                      [NSMutableArray arrayWithObjects: 
-                                      [[[MyLauncherItem alloc] initWithTitle:@"Item 1 Icon"
+                                      [[[MyLauncherItem alloc] initWithTitle:@"Item 1"
                                                                  iPhoneImage:@"itemImage" 
                                                                    iPadImage:@"itemImage-iPad"
                                                                       target:@"ItemViewController" 
@@ -113,6 +114,13 @@
         // Or uncomment the line below to disable editing (moving/deleting) completely!
         // [self.launcherView setEditingAllowed:NO];
 	}
+    
+    // Set badge text for a MyLauncherItem using it's setBadgeText: method
+    [(MyLauncherItem *)[[[self.launcherView pages] objectAtIndex:0] objectAtIndex:0] setBadgeText:@"4"];
+    
+    // Alternatively, you can import CustomBadge.h as above and setCustomBadge: as below.
+    // This will allow you to change colors, set scale, and remove the shine and/or frame.
+    [(MyLauncherItem *)[[[self.launcherView pages] objectAtIndex:0] objectAtIndex:1] setCustomBadge:[CustomBadge customBadgeWithString:@"2" withStringColor:[UIColor blackColor] withInsetColor:[UIColor whiteColor] withBadgeFrame:YES withBadgeFrameColor:[UIColor blackColor] withScale:0.8 withShining:NO]];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
