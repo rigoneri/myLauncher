@@ -158,7 +158,7 @@
 	CGContextAddArc(context, minX+radius, maxY-radius, radius, M_PI/2, M_PI, 0);
 	CGContextAddArc(context, minX+radius, minY+radius, radius, M_PI, M_PI+M_PI/2, 0);
 	CGContextClip(context);
-	CGContextClosePath(context);
+	//CGContextClosePath(context);
 	
 	
 	size_t num_locations = 2;
