@@ -126,7 +126,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
 	//If you don't want to support multiple orientations uncomment the line below
-	//return NO;
+    //return (toInterfaceOrientation == UIInterfaceOrientationPortrait);
 	return [super shouldAutorotateToInterfaceOrientation:toInterfaceOrientation];
 }
 

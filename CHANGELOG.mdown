@@ -1,3 +1,8 @@
+myLauncher 2.1.1 (18/07/11)
+===========================
+* Added calls to launched view controllers for rotation
+* Other minor bug fixes
+
 myLauncher 2.1.0 (03/06/11)
 ===========================
 * Added CustomBadge capability's from Sascha Paulus at spaulus.com

@@ -101,8 +101,8 @@
 	[itemImage release];
     
     if(self.badge) {
-        self.badge.frame = CGRectMake((itemImageX + itemImageWidth) - (self.badge.frame.size.width - 6), 
-                                      itemImageY-6, self.badge.frame.size.width, self.badge.frame.size.height);
+        self.badge.frame = CGRectMake((itemImageX + itemImageWidth) - (self.badge.bounds.size.width - 6), 
+                                      itemImageY-6, self.badge.bounds.size.width, self.badge.bounds.size.height);
         [self addSubview:self.badge];
     }
 	

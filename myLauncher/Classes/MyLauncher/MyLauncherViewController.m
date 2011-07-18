@@ -64,20 +64,23 @@
 }
 
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {	
-	if(self.launcherNavigationController)
-		[self.launcherNavigationController setNavigationBarHidden:YES];
-	
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {		
 	return YES;
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [self.launcherView setCurrentOrientation:toInterfaceOrientation];
+    if (self.launcherNavigationController) {
+        [self.launcherNavigationController setNavigationBarHidden:YES];
+        [self.launcherNavigationController willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    }
 }
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-	if(self.launcherNavigationController)	
-		[self.launcherNavigationController setNavigationBarHidden:NO];
+	if(self.launcherNavigationController) {
+        [self.launcherNavigationController setNavigationBarHidden:NO];
+        [self.launcherNavigationController didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    }
 	
 	self.overlayView.frame = self.launcherView.frame;
 	[self.launcherView layoutLauncher];
@@ -94,6 +97,7 @@
 - (void)dealloc {
 	self.launcherNavigationController = nil;
     self.launcherView = nil;
+    self.appControllers = nil;
     self.overlayView = nil;
     self.currentViewController = nil;
     [super dealloc];
