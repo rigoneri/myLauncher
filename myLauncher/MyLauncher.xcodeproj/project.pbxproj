@@ -60,8 +60,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* MyLauncher_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLauncher_Prefix.pch; sourceTree = "<group>"; };
 		7DA45DCB1316B0C700D5FA85 /* itemImage-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "itemImage-iPad.png"; path = "imgs/itemImage-iPad.png"; sourceTree = "<group>"; };
-		7DC0590D1397988B00E0EAA9 /* CustomBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomBadge.h; path = ../../../CustomBadge/Classes/CustomBadge.h; sourceTree = "<group>"; };
-		7DC0590E1397988B00E0EAA9 /* CustomBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomBadge.m; path = ../../../CustomBadge/Classes/CustomBadge.m; sourceTree = "<group>"; };
+		7DC0590D1397988B00E0EAA9 /* CustomBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomBadge.h; path = MyLauncher/CustomBadge.h; sourceTree = "<group>"; };
+		7DC0590E1397988B00E0EAA9 /* CustomBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomBadge.m; path = MyLauncher/CustomBadge.m; sourceTree = "<group>"; };
 		7DF382D913326D0100738192 /* Icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-iPad.png"; path = "imgs/Icon-iPad.png"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* MyLauncher-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MyLauncher-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */

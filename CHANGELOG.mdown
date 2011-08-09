@@ -1,3 +1,8 @@
+myLauncher 2.1.2 (09/08/11)
+===========================
+* CustomBadge path relative to project path
+* Removed unnecessary files and user-specific settings
+
 myLauncher 2.1.1 (18/07/11)
 ===========================
 * Added calls to launched view controllers for rotation
