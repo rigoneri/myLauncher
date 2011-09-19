@@ -75,6 +75,11 @@ Apps using myLauncher
 
 Let me know if you use myLauncher 2 in your app so I can add it to a list here.
 
+Education
+---------
+
+* [myHomework][] - an application for keeping track of homework and assignments
+
 Finance
 -------
 
@@ -92,6 +97,7 @@ Credits
 
 [myLauncher Demo Video]: http://www.youtube.com/watch?v=D6SVYLfAO-Q
 [Google Group]: http://groups.google.com/group/mylauncher
+[myHomework]: http://itunes.apple.com/us/app/myhomework/id303490844
 [EuroIRP]: http://itunes.apple.com/us/app/euroirp-research/id440529162?mt=8
 [euroirp.com]: http://www.euroirp.com/
 [wRD Investor]: http://itunes.apple.com/app/id446377194
