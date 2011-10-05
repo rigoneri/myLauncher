@@ -1,4 +1,4 @@
-myLauncher 2.1.2 (09/08/11)
+myLauncher 2.1.3 (05/10/11)
 ===========================
 
 myLauncher is a lightweight open source Objective-C library that allows you to add an iPhone like launcher into your iPhone or iPad app. This library was founded by rigoneri (see section below) and later taken on by Jarada.
