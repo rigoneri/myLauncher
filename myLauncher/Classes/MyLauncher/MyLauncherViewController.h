@@ -25,9 +25,9 @@
 @interface MyLauncherViewController : UIViewController <MyLauncherViewDelegate, UINavigationControllerDelegate> {
 }
 
-@property (nonatomic, retain) UINavigationController *launcherNavigationController;
-@property (nonatomic, retain) MyLauncherView *launcherView;
-@property (nonatomic, retain) NSMutableDictionary *appControllers;
+@property (nonatomic, strong) UINavigationController *launcherNavigationController;
+@property (nonatomic, strong) MyLauncherView *launcherView;
+@property (nonatomic, strong) NSMutableDictionary *appControllers;
 
 -(BOOL)hasSavedLauncherItems;
 -(void)clearSavedLauncherItems;

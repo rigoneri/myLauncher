@@ -114,11 +114,4 @@
 	[self setNeedsDisplay];
 }
 
-- (void)dealloc 
-{
-    self.activePageColor = nil;
-    self.inactivePageColor = nil;
-    [super dealloc];
-}
-
 @end

@@ -111,7 +111,7 @@ static const CGFloat iPadLandscapeYPadding = 30;
         numberOfImmovableItems = -1;
 		[self setupCurrentViewLayoutSettings];
 		
-		[self setPagesScrollView:[[[MyLauncherScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height - pControllHeight)] autorelease]];
+		[self setPagesScrollView:[[MyLauncherScrollView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height - pControllHeight)]];
 		self.pagesScrollView.delegate = self;
 		self.pagesScrollView.pagingEnabled = YES;
 		self.pagesScrollView.showsHorizontalScrollIndicator = NO;
@@ -123,7 +123,7 @@ static const CGFloat iPadLandscapeYPadding = 30;
 		self.pagesScrollView.multipleTouchEnabled = NO;
 		[self addSubview:self.pagesScrollView];
 		
-		[self setPageControl:[[[MyLauncherPageControl alloc] initWithFrame:CGRectMake(0, frame.size.height - pControllHeight - 45, frame.size.width, pControllHeight)] autorelease]]; //if starts landscape this will break...
+		[self setPageControl:[[MyLauncherPageControl alloc] initWithFrame:CGRectMake(0, frame.size.height - pControllHeight - 45, frame.size.width, pControllHeight)]]; //if starts landscape this will break...
 		self.pageControl.numberOfPages = 1;
 		self.pageControl.currentPage = 0;
         self.pageControl.maxNumberOfPages = maxPageCount;
@@ -141,18 +141,9 @@ static const CGFloat iPadLandscapeYPadding = 30;
     [self layoutItems];
 }
 
-- (void)dealloc 
+- (void)dealloc
 {
-	self.delegate = nil;
-    self.pagesScrollView = nil;
-    self.pageControl = nil;
-    self.pages = nil;
-    self.itemHoldTimer = nil;
-    self.movePagesTimer = nil;
-    self.draggingItem = nil;
-    
     [self removeObserver:self forKeyPath:@"frame"];
-    [super dealloc];
 }
 
 #pragma mark - Setters
@@ -171,8 +162,7 @@ static const CGFloat iPadLandscapeYPadding = 30;
             }
         }
         
-        [_pages release];
-        _pages = [pages retain];
+        _pages = pages;
         itemsAdded = NO;
         [self layoutLauncherAnimated:animated];
     }
@@ -378,19 +368,19 @@ static const CGFloat iPadLandscapeYPadding = 30;
 			NSMutableArray *nextPage = [self.pages objectAtIndex:nextPageIndex];
 			if(nextPage)
 			{
-				MyLauncherItem *moveItem = [[page lastObject] retain];
+				MyLauncherItem *moveItem = [page lastObject];
 				[page removeObject:moveItem];
 				[nextPage insertObject:moveItem atIndex:0];
-                [moveItem release]; moveItem = nil;
+                moveItem = nil;
 			}
 			else
 			{
 				[self.pages addObject:[NSMutableArray array]];
 				nextPage = [self.pages lastObject];
-				MyLauncherItem *moveItem = [[page lastObject] retain];
+				MyLauncherItem *moveItem = [page lastObject];
 				[page removeObject:moveItem];
 				[nextPage addObject:moveItem];
-                [moveItem release]; moveItem = nil;
+                moveItem = nil;
 			}
 		}
 		currentPageIndex++;
@@ -520,7 +510,6 @@ static const CGFloat iPadLandscapeYPadding = 30;
                 if (dragIndex < [itemPage count]) {
                     MyLauncherItem *itemToMove = [itemPage objectAtIndex:dragIndex];
                     if ([self itemMovable:itemToMove]) {
-                        [[self.draggingItem retain] autorelease];
                         [itemPage removeObjectAtIndex:sindex];
                         
                         NSMutableArray *currentPage = [self.pages objectAtIndex:currentPageIndex];
@@ -813,16 +802,12 @@ static const CGFloat iPadLandscapeYPadding = 30;
             [itemToSave setObject:[NSNumber numberWithInt:2] forKey:@"myLauncherViewItemVersion"];
 			
 			[pageToSave addObject:itemToSave];
-			[itemToSave release];
 		}
 		[pagesToSave addObject:pageToSave];
-		[pageToSave release];
 	}
 	
 	[self saveToUserDefaults:pagesToSave key:@"myLauncherView"];
     [self saveToUserDefaults:[NSNumber numberWithInt:numberOfImmovableItems] key:@"myLauncherViewImmovable"];
-	
-	[pagesToSave release];
 }
 
 -(void)saveToUserDefaults:(id)object key:(NSString *)key
