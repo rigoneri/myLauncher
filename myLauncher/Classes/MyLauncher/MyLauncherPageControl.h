@@ -31,7 +31,7 @@
 @property (nonatomic) NSInteger numberOfPages;
 @property (nonatomic) NSInteger maxNumberOfPages;
 @property (nonatomic) BOOL hidesForSinglePage;
-@property (nonatomic, retain) UIColor *inactivePageColor;
-@property (nonatomic, retain) UIColor *activePageColor;
+@property (nonatomic, strong) UIColor *inactivePageColor;
+@property (nonatomic, strong) UIColor *activePageColor;
 
 @end

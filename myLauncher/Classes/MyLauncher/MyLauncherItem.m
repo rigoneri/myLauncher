@@ -56,23 +56,10 @@
 		[self setControllerStr:targetControllerStr];
         [self setControllerTitle:targetTitle];
 		
-		[self setCloseButton:[[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0, 0)] autorelease]];
+		[self setCloseButton:[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0, 0)]];
 		self.closeButton.hidden = YES;
 	}
 	return self;
-}
-
-- (void)dealloc 
-{
-	self.delegate = nil;
-    self.title = nil;
-    self.image = nil;
-    self.iPadImage = nil;
-    self.controllerStr = nil;
-    self.controllerTitle = nil;
-    self.closeButton = nil;
-    self.badge = nil;
-	[super dealloc];
 }
 
 #pragma mark - Layout
@@ -98,8 +85,7 @@
 	itemImage.frame = CGRectMake(itemImageX, itemImageY, itemImage.bounds.size.width, itemImage.bounds.size.height);
 	[self addSubview:itemImage];
     CGFloat itemImageWidth = itemImage.bounds.size.width;
-	[itemImage release];
-    
+
     if(self.badge) {
         self.badge.frame = CGRectMake((itemImageX + itemImageWidth) - (self.badge.bounds.size.width - 6), 
                                       itemImageY-6, self.badge.bounds.size.width, self.badge.bounds.size.height);
@@ -127,7 +113,6 @@
 	itemLabel.text = self.title;
 	itemLabel.numberOfLines = 2;
 	[self addSubview:itemLabel];
-	[itemLabel release];
 }
 
 #pragma mark - Touch

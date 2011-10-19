@@ -24,8 +24,8 @@
 -(NSMutableArray *)savedLauncherItems;
 -(NSArray*)retrieveFromUserDefaults:(NSString *)key;
 -(void)saveToUserDefaults:(id)object key:(NSString *)key;
-@property (nonatomic, retain) UIView *overlayView;
-@property (nonatomic, retain) UIViewController *currentViewController;
+@property (nonatomic, strong) UIView *overlayView;
+@property (nonatomic, strong) UIViewController *currentViewController;
 @end
 
 @implementation MyLauncherViewController
@@ -48,7 +48,7 @@
 -(void)loadView {
 	[super loadView];
 	
-	[self setLauncherView:[[[MyLauncherView alloc] initWithFrame:self.view.bounds] autorelease]];
+	[self setLauncherView:[[MyLauncherView alloc] initWithFrame:self.view.bounds]];
 	[self.launcherView setBackgroundColor:COLOR(234,237,250)];
 	[self.launcherView setDelegate:self];
 	self.view = self.launcherView;
@@ -56,7 +56,7 @@
     [self.launcherView setPages:[self savedLauncherItems]];
     [self.launcherView setNumberOfImmovableItems:[(NSNumber *)[self retrieveFromUserDefaults:@"myLauncherViewImmovable"] intValue]];
     
-    [self setAppControllers:[[[NSMutableDictionary alloc] init] autorelease]];
+    [self setAppControllers:[[NSMutableDictionary alloc] init]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -94,15 +94,6 @@
     [super viewDidUnload];
 }
 
-- (void)dealloc {
-	self.launcherNavigationController = nil;
-    self.launcherView = nil;
-    self.appControllers = nil;
-    self.overlayView = nil;
-    self.currentViewController = nil;
-    [super dealloc];
-}
-
 #pragma mark - MyLauncherItem management
 
 -(BOOL)hasSavedLauncherItems {
@@ -114,9 +105,9 @@
         return;
     }
     Class viewCtrClass = [[self appControllers] objectForKey:[item controllerStr]];
-	UIViewController *controller = [[[viewCtrClass alloc] init] autorelease];
+	UIViewController *controller = [[viewCtrClass alloc] init];
 	
-	[self setLauncherNavigationController:[[[UINavigationController alloc] initWithRootViewController:controller] autorelease]];	
+	[self setLauncherNavigationController:[[UINavigationController alloc] initWithRootViewController:controller]];
 	[[self.launcherNavigationController topViewController] setTitle:item.controllerTitle];
     [self.launcherNavigationController setDelegate:self];
 	
@@ -126,10 +117,10 @@
         self.launcherNavigationController.view.frame = CGRectMake(0, 0, 1024, 768);
 	
 	[controller.navigationItem setLeftBarButtonItem:
-	 [[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"launcher"]
+	 [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"launcher"]
 									  style:UIBarButtonItemStyleBordered 
 									 target:self 
-									 action:@selector(closeView)] autorelease]];
+									 action:@selector(closeView)]];
 				
 	UIView *viewToLaunch = [[self.launcherNavigationController topViewController] view];
 	
@@ -139,7 +130,7 @@
 	
 	if (!self.overlayView) 
 	{
-		[self setOverlayView:[[[UIView alloc] initWithFrame:self.launcherView.bounds] autorelease]];
+		[self setOverlayView:[[UIView alloc] initWithFrame:self.launcherView.bounds]];
 		self.overlayView.backgroundColor = [UIColor blackColor];
 		self.overlayView.alpha = 0;
 		self.overlayView.autoresizesSubviews = YES;
@@ -162,9 +153,9 @@
 }
 
 -(void)launcherViewDidBeginEditing:(id)sender {
-	[self.navigationItem setRightBarButtonItem:[[[UIBarButtonItem alloc] 
+	[self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]
 												 initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-												 target:self.launcherView action:@selector(endEditing)] autorelease] animated:YES];
+												 target:self.launcherView action:@selector(endEditing)] animated:YES];
 }
 
 -(void)launcherViewDidEndEditing:(id)sender {
@@ -229,28 +220,27 @@
                 NSNumber *version;
                 if ((version = [item objectForKey:@"myLauncherViewItemVersion"])) {
                     if ([version intValue] == 2) {
-                        [savedPage addObject:[[[MyLauncherItem alloc] 
+                        [savedPage addObject:[[MyLauncherItem alloc]
                                                initWithTitle:[item objectForKey:@"title"]
                                                iPhoneImage:[item objectForKey:@"image"]
                                                iPadImage:[item objectForKey:@"iPadImage"]
                                                target:[item objectForKey:@"controller"] 
                                                targetTitle:[item objectForKey:@"controllerTitle"]
-                                               deletable:[[item objectForKey:@"deletable"] boolValue]] autorelease]];
+                                               deletable:[[item objectForKey:@"deletable"] boolValue]]];
                     }
                 } else {
-                    [savedPage addObject:[[[MyLauncherItem alloc]
+                    [savedPage addObject:[[MyLauncherItem alloc]
                                            initWithTitle:[item objectForKey:@"title"]
                                            image:[item objectForKey:@"image"]
                                            target:[item objectForKey:@"controller"]
-                                           deletable:[[item objectForKey:@"deletable"] boolValue]] autorelease]];
+                                           deletable:[[item objectForKey:@"deletable"] boolValue]]];
                 }
 			}
 			
 			[savedLauncherItems addObject:savedPage];
-			[savedPage release];
 		}
 		
-		return [savedLauncherItems autorelease];
+		return savedLauncherItems;
 	}
     
 	return nil;

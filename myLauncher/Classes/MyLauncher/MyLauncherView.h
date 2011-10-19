@@ -49,10 +49,10 @@
 
 @property (nonatomic) BOOL editingAllowed;
 @property (nonatomic) NSInteger numberOfImmovableItems;
-@property (nonatomic, retain) id <MyLauncherViewDelegate> delegate;
-@property (nonatomic, retain) MyLauncherScrollView *pagesScrollView;
-@property (nonatomic, retain) MyLauncherPageControl *pageControl;
-@property (nonatomic, retain) NSMutableArray *pages;
+@property (nonatomic, strong) id <MyLauncherViewDelegate> delegate;
+@property (nonatomic, strong) MyLauncherScrollView *pagesScrollView;
+@property (nonatomic, strong) MyLauncherPageControl *pageControl;
+@property (nonatomic, strong) NSMutableArray *pages;
 
 // Default for animation below is YES
 
