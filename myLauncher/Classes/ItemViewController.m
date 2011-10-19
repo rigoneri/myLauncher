@@ -26,18 +26,17 @@
 	self.navigationController.navigationBar.tintColor = COLOR(2, 100, 162);
 	[self.view setBackgroundColor:COLOR(234,237,250)];
 	
-	UIButton *btn = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];
+	UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	btn.frame = CGRectMake(20, 20, 100, 40);
 	btn.backgroundColor = [UIColor clearColor];
 	[btn setTitle:@"Item" forState:UIControlStateNormal];
 	[btn addTarget:self action:@selector(openView) forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:btn];
-	[btn release];
 }
 
 -(void)openView
 {
-	UIViewController *targetViewController = [[[ItemViewController alloc] init] autorelease];
+	UIViewController *targetViewController = [[ItemViewController alloc] init];
     [self.navigationController pushViewController:targetViewController animated:YES];
 }
 
@@ -50,11 +49,5 @@
 {
     [super viewDidUnload];
 }
-
-- (void)dealloc 
-{
-    [super dealloc];
-}
-
 
 @end

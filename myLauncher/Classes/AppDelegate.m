@@ -29,25 +29,17 @@
 	window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     if (!window) 
     {
-        [self release];
         return;
     }
     window.backgroundColor = [UIColor blackColor];
 							
 	navigationController = [[UINavigationController alloc] initWithRootViewController:
-							[[[RootViewController alloc] init] autorelease]];
+							[[RootViewController alloc] init]];
 	navigationController.navigationBar.tintColor = COLOR(2, 100, 162);
 	
     [window addSubview:navigationController.view];
     [window makeKeyAndVisible];
     [window layoutSubviews];    
-}
-
-- (void)dealloc 
-{
-    [navigationController release];
-    [window release];
-    [super dealloc];
 }
 
 @end

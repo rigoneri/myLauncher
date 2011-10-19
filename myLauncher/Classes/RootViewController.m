@@ -41,68 +41,68 @@
 	{
 		[self.launcherView setPages:[NSMutableArray arrayWithObjects: 
                                      [NSMutableArray arrayWithObjects: 
-                                      [[[MyLauncherItem alloc] initWithTitle:@"Item 1"
+                                      [[MyLauncherItem alloc] initWithTitle:@"Item 1"
                                                                  iPhoneImage:@"itemImage" 
                                                                    iPadImage:@"itemImage-iPad"
                                                                       target:@"ItemViewController" 
                                                                  targetTitle:@"Item 1 View"
-                                                                   deletable:NO] autorelease],
-                                      [[[MyLauncherItem alloc] initWithTitle:@"Item 2"
+                                                                   deletable:NO],
+                                      [[MyLauncherItem alloc] initWithTitle:@"Item 2"
                                                                  iPhoneImage:@"itemImage" 
                                                                    iPadImage:@"itemImage-iPad"
                                                                       target:@"ItemViewController" 
                                                                  targetTitle:@"Item 2 View" 
-                                                                   deletable:NO] autorelease],
-                                      [[[MyLauncherItem alloc] initWithTitle:@"Item 3"
+                                                                   deletable:NO],
+                                      [[MyLauncherItem alloc] initWithTitle:@"Item 3"
                                                                  iPhoneImage:@"itemImage" 
                                                                    iPadImage:@"itemImage-iPad"
                                                                       target:@"ItemViewController" 
                                                                  targetTitle:@"Item 3 View"
-                                                                   deletable:YES] autorelease],
-                                      [[[MyLauncherItem alloc] initWithTitle:@"Item 4"
+                                                                   deletable:YES],
+                                      [[MyLauncherItem alloc] initWithTitle:@"Item 4"
                                                                  iPhoneImage:@"itemImage" 
                                                                    iPadImage:@"itemImage-iPad"
                                                                       target:@"ItemViewController" 
                                                                  targetTitle:@"Item 4 View"
-                                                                   deletable:NO] autorelease],
-                                      [[[MyLauncherItem alloc] initWithTitle:@"Item 5"
+                                                                   deletable:NO],
+                                      [[MyLauncherItem alloc] initWithTitle:@"Item 5"
                                                                  iPhoneImage:@"itemImage" 
                                                                    iPadImage:@"itemImage-iPad"
                                                                       target:@"ItemViewController" 
                                                                  targetTitle:@"Item 5 View"
-                                                                   deletable:YES] autorelease],
-                                      [[[MyLauncherItem alloc] initWithTitle:@"Item 6"
+                                                                   deletable:YES],
+                                      [[MyLauncherItem alloc] initWithTitle:@"Item 6"
                                                                  iPhoneImage:@"itemImage" 
                                                                    iPadImage:@"itemImage-iPad"
                                                                       target:@"ItemViewController" 
                                                                  targetTitle:@"Item 6 View"
-                                                                   deletable:NO] autorelease],
-                                      [[[MyLauncherItem alloc] initWithTitle:@"Item 7"
+                                                                   deletable:NO],
+                                      [[MyLauncherItem alloc] initWithTitle:@"Item 7"
                                                                  iPhoneImage:@"itemImage" 
                                                                    iPadImage:@"itemImage-iPad"
                                                                       target:@"ItemViewController" 
                                                                  targetTitle:@"Item 7 View"
-                                                                   deletable:NO] autorelease],
+                                                                   deletable:NO],
                                       nil], 
                                      [NSMutableArray arrayWithObjects: 
-                                      [[[MyLauncherItem alloc] initWithTitle:@"Item 8"
+                                      [[MyLauncherItem alloc] initWithTitle:@"Item 8"
                                                                  iPhoneImage:@"itemImage" 
                                                                    iPadImage:@"itemImage-iPad"
                                                                       target:@"ItemViewController" 
                                                                  targetTitle:@"Item 8 View"
-                                                                   deletable:NO] autorelease],
-                                      [[[MyLauncherItem alloc] initWithTitle:@"Item 9"
+                                                                   deletable:NO],
+                                      [[MyLauncherItem alloc] initWithTitle:@"Item 9"
                                                                  iPhoneImage:@"itemImage" 
                                                                    iPadImage:@"itemImage-iPad"
                                                                       target:@"ItemViewController" 
                                                                  targetTitle:@"Item 9 View"
-                                                                   deletable:YES] autorelease],
-                                      [[[MyLauncherItem alloc] initWithTitle:@"Item 10"
+                                                                   deletable:YES],
+                                      [[MyLauncherItem alloc] initWithTitle:@"Item 10"
                                                                  iPhoneImage:@"itemImage" 
                                                                    iPadImage:@"itemImage-iPad"
                                                                       target:@"ItemViewController" 
                                                                  targetTitle:@"Item 10 View"
-                                                                   deletable:NO] autorelease],
+                                                                   deletable:NO],
                                       nil],
                                      nil]];
         
@@ -138,11 +138,6 @@
 - (void)viewDidUnload 
 {
     [super viewDidUnload];
-}
-
-- (void)dealloc 
-{
-    [super dealloc];
 }
 
 @end
