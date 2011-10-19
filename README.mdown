@@ -50,7 +50,7 @@ Follow the following steps in order to add myLauncher into your project:
 5. In your application delegate implementation file make the following changes (AppDelegate.m):	
 	* Inside applicationDidFinishLaunching modify your UINavigationController to initialize with RootViewController:
 		
-		navigationController = [[UINavigationController alloc] initWithRootViewController:[[[RootViewController alloc] init] autorelease]];
+		navigationController = [[UINavigationController alloc] initWithRootViewController:[[RootViewController alloc] init]];
 		
 6. In your prefix file make the following changes (AppName_Prefix.pch):	
 	* Outside the ifdef define the shortcut for color:
@@ -83,9 +83,15 @@ Education
 Finance
 -------
 
-* [EuroIRP][] - an application built for the European Independent Research Providers, at [euroirp.com][].
+* [CFRA][] - a financial research application for the Center of Financial Research and Analysis (CFRA).
 
-* [wRD Investor][] - an application built to showcase research and commentary from three leading research providers.
+* [EuroIRP][] - a financial research application for the European Independent Research Providers, at [euroirp.com][].
+
+* [FuturesTechs][] - a financial research for FuturesTechs, the leading provider of Independent Daily Analysis for Trading Professionals.
+
+* [Troika][] - a financial research application for Troika Dialog. 
+
+* [wRD Investor][] - a financial research application built to showcase research and commentary from three leading research providers.
 
 Credits
 =======
@@ -98,8 +104,11 @@ Credits
 [myLauncher Demo Video]: http://www.youtube.com/watch?v=D6SVYLfAO-Q
 [Google Group]: http://groups.google.com/group/mylauncher
 [myHomework]: http://itunes.apple.com/us/app/myhomework/id303490844
-[EuroIRP]: http://itunes.apple.com/us/app/euroirp-research/id440529162?mt=8
+[CFRA]: http://itunes.apple.com/us/app/cfra/id459035586
+[EuroIRP]: http://itunes.apple.com/us/app/euroirp-research/id440529162
 [euroirp.com]: http://www.euroirp.com/
+[FuturesTechs]: http://itunes.apple.com/us/app/futurestechs/id458357826
+[Troika]: http://itunes.apple.com/us/app/troika/id454433663
 [wRD Investor]: http://itunes.apple.com/app/id446377194
 [rigoneri]: http://www.twitter.com/rigoneri
 [rigoneri.com]: http://www.rigoneri.com
