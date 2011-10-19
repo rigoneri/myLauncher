@@ -86,7 +86,7 @@
 		[subview removeFromSuperview];
 	
     UIImage *image = nil;
-    if ([[UIDevice currentDevice].model hasPrefix:@"iPad"] && [self iPadImage]) {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad && [self iPadImage]) {
         image = [UIImage imageNamed:self.iPadImage];
     } else {
         image = [UIImage imageNamed:self.image];
