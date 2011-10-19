@@ -1,3 +1,8 @@
+myLauncher 2.2.0 (19/10/11)
+===========================
+* Merge #6 ARC enabled
+* Modified project to become fully ARC compatible
+
 myLauncher 2.1.4 (19/10/11)
 ===========================
 * Fixes #7 Icon alignment issue when using iPad to test iPhone-only app
