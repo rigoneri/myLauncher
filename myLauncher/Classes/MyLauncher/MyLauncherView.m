@@ -504,10 +504,16 @@ static const CGFloat iPadLandscapeYPadding = 30;
 			NSInteger dragIndex = (dragItemRow * columnCount) + dragItemColumn;
             NSInteger currentPageIndex = floor(self.pagesScrollView.contentOffset.x/self.pagesScrollView.frame.size.width);
             
-			if(sindex != dragIndex)
+            NSMutableArray *itemPage = [self.pages objectAtIndex:page];
+            if(currentPageIndex != page && dragIndex >= [itemPage count])
+            {
+                dragIndex = 0;
+            }
+            
+			if(sindex != dragIndex || (dragIndex == 0 && [itemPage count] == 1 && currentPageIndex != page))
 			{
-                NSMutableArray *itemPage = [self.pages objectAtIndex:page];
-                if (dragIndex < [itemPage count]) {
+                if (dragIndex < [itemPage count])
+                {
                     MyLauncherItem *itemToMove = [itemPage objectAtIndex:dragIndex];
                     if ([self itemMovable:itemToMove]) {
                         [itemPage removeObjectAtIndex:sindex];
