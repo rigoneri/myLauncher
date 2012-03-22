@@ -1,3 +1,8 @@
+myLauncher 2.2.2 (22/03/12)
+===========================
+* Fixes #9 Multiple Calls to viewWillAppear viewDidAppear... iOS5.1
+* Adds ability to bind title to bottom; now closing #3 pull request
+
 myLauncher 2.2.1 (07/02/12)
 ===========================
 * Fixes #8 Issue with one icon on 2nd page

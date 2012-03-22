@@ -103,6 +103,12 @@
 	
 	CGFloat itemLabelY = itemImageY + itemImage.bounds.size.height;
 	CGFloat itemLabelHeight = self.bounds.size.height - itemLabelY;
+    
+    if (titleBoundToBottom) 
+    {
+        itemLabelY = self.bounds.size.height - itemLabelHeight - 4;
+        itemLabelHeight = 34;
+    }
 	
 	UILabel *itemLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, itemLabelY, self.bounds.size.width, itemLabelHeight)];
 	itemLabel.backgroundColor = [UIColor clearColor];
@@ -187,6 +193,16 @@
 -(BOOL)deletable
 {
 	return deletable;
+}
+
+-(BOOL)titleBoundToBottom
+{
+    return titleBoundToBottom;
+}
+
+-(void)setTitleBoundToBottom:(BOOL)bind
+{
+    titleBoundToBottom = bind;
 }
 
 -(NSString *)badgeText {

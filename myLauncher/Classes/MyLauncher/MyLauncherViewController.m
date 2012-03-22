@@ -175,9 +175,13 @@
 						 self.overlayView.alpha = 0;
 					 }
 					 completion:^(BOOL finished){
-						 [[self.launcherNavigationController topViewController] viewWillDisappear:NO];
-						 [[self.launcherNavigationController view] removeFromSuperview];
-						 [[self.launcherNavigationController topViewController] viewDidDisappear:NO];
+                         if ([[UIDevice currentDevice].systemVersion doubleValue] < 5.0) {
+                             [[self.launcherNavigationController topViewController] viewWillDisappear:NO];
+                         }
+                         [[self.launcherNavigationController view] removeFromSuperview];
+                         if ([[UIDevice currentDevice].systemVersion doubleValue] < 5.0) {
+                             [[self.launcherNavigationController topViewController] viewDidDisappear:NO];
+                         }
                          [self.launcherNavigationController setDelegate:nil];
                          [self setLauncherNavigationController:nil];
                          [self setCurrentViewController:nil];
@@ -189,17 +193,21 @@
 #pragma mark - UINavigationControllerDelegate
 
 -(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    if (self.currentViewController) {
-        [self.currentViewController viewWillDisappear:animated];
+    if ([[UIDevice currentDevice].systemVersion doubleValue] < 5.0) {
+        if (self.currentViewController) {
+            [self.currentViewController viewWillDisappear:animated];
+        }
+        [viewController viewWillAppear:animated];
     }
-    [viewController viewWillAppear:animated];
 }
 
 -(void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    if (self.currentViewController) {
-        [self.currentViewController viewDidDisappear:animated];
+    if ([[UIDevice currentDevice].systemVersion doubleValue] < 5.0) {
+        if (self.currentViewController) {
+            [self.currentViewController viewDidDisappear:animated];
+        }
+        [viewController viewDidAppear:animated];
     }
-    [viewController viewDidAppear:animated];
     [self setCurrentViewController:viewController];
 }
 

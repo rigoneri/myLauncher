@@ -29,6 +29,7 @@
 @interface MyLauncherItem : UIControl {	
 	BOOL dragging;
 	BOOL deletable;
+    BOOL titleBoundToBottom;
 }
 
 @property (nonatomic, assign) id delegate;
@@ -46,6 +47,9 @@
 -(void)setDragging:(BOOL)flag;
 -(BOOL)dragging;
 -(BOOL)deletable;
+
+-(BOOL)titleBoundToBottom;
+-(void)setTitleBoundToBottom:(BOOL)bind;
 
 -(NSString *)badgeText;
 -(void)setBadgeText:(NSString *)text;
