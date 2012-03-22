@@ -1,3 +1,7 @@
+myLauncher 2.2.3 (22/03/12)
+===========================
+* Fix to binding of text to bottom in 2.2.2
+
 myLauncher 2.2.2 (22/03/12)
 ===========================
 * Fixes #9 Multiple Calls to viewWillAppear viewDidAppear... iOS5.1

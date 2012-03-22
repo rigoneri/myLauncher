@@ -106,8 +106,8 @@
     
     if (titleBoundToBottom) 
     {
-        itemLabelY = self.bounds.size.height - itemLabelHeight - 4;
         itemLabelHeight = 34;
+        itemLabelY = (self.bounds.size.height + 6) - itemLabelHeight;
     }
 	
 	UILabel *itemLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, itemLabelY, self.bounds.size.width, itemLabelHeight)];
@@ -203,6 +203,7 @@
 -(void)setTitleBoundToBottom:(BOOL)bind
 {
     titleBoundToBottom = bind;
+    [self layoutItem];
 }
 
 -(NSString *)badgeText {
