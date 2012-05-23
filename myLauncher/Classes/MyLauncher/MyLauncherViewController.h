@@ -32,4 +32,7 @@
 -(BOOL)hasSavedLauncherItems;
 -(void)clearSavedLauncherItems;
 
+-(void)launcherViewItemSelected:(MyLauncherItem*)item;
+-(void)closeView;
+
 @end

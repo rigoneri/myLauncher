@@ -26,6 +26,7 @@
 -(void)saveToUserDefaults:(id)object key:(NSString *)key;
 @property (nonatomic, strong) UIView *overlayView;
 @property (nonatomic, strong) UIViewController *currentViewController;
+@property (nonatomic, assign) CGRect statusBarFrame;
 @end
 
 @implementation MyLauncherViewController
@@ -35,6 +36,7 @@
 @synthesize appControllers = _appControllers;
 @synthesize overlayView = _overlayView;
 @synthesize currentViewController = _currentViewController;
+@synthesize statusBarFrame = _statusBarFrame;
 
 #pragma mark - ViewController lifecycle
 
@@ -57,14 +59,31 @@
     [self.launcherView setNumberOfImmovableItems:[(NSNumber *)[self retrieveFromUserDefaults:@"myLauncherViewImmovable"] intValue]];
     
     [self setAppControllers:[[NSMutableDictionary alloc] init]];
+    [self setStatusBarFrame:[[UIApplication sharedApplication] statusBarFrame]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [self.launcherView viewDidAppear:animated];
 }
 
+- (void)viewWillLayoutSubviews {
+    if (!CGRectEqualToRect(self.statusBarFrame, [[UIApplication sharedApplication] statusBarFrame])) {
+        CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+        if (self.launcherNavigationController) {
+            CGRect navConFrame = self.launcherNavigationController.view.bounds;
+            [UIView animateWithDuration:0.3 animations:^{
+                CGRect navBarFrame = self.launcherNavigationController.navigationBar.frame;
+                [self.launcherNavigationController.navigationBar setFrame:CGRectMake(navBarFrame.origin.x, statusBarFrame.size.height, navBarFrame.size.width, navBarFrame.size.height)];                
+                [self.launcherNavigationController.view setFrame:CGRectMake(navConFrame.origin.x, navConFrame.origin.y, navConFrame.size.width, navConFrame.size.height)];
+            } completion:^(BOOL finished){
+                [self.launcherNavigationController.view setNeedsLayout];
+            }];
+        }
+        [self setStatusBarFrame:statusBarFrame];
+    }
+}
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {		
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
 	return YES;
 }
 
@@ -164,8 +183,11 @@
 
 - (void)closeView {	
 	UIView *viewToClose = [[self.launcherNavigationController topViewController] view];
+    if (!viewToClose)
+        return;
+    
 	viewToClose.transform = CGAffineTransformIdentity;
-	
+    
 	[UIView animateWithDuration:0.3 
 						  delay:0 
 						options:UIViewAnimationOptionCurveEaseOut 

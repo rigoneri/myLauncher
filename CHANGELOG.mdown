@@ -1,3 +1,8 @@
+myLauncher 2.2.4 (23/05/12)
+===========================
+* Exposed launcherViewItemSelected: and closeView methods to allow for overriding of these functions
+* Fixes #10 In-Call Status Bar doesn't affect Launcher Subviews
+
 myLauncher 2.2.3 (22/03/12)
 ===========================
 * Fix to binding of text to bottom in 2.2.2
